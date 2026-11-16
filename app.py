@@ -103,7 +103,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 st.title("🚗 Road Accident Data Analysis")
 st.caption("Safety Reporting and Statistical Analysis System")
 
@@ -112,20 +111,14 @@ st.caption("Safety Reporting and Statistical Analysis System")
 # LOAD DATA FROM MYSQL
 # --------------------------------------------------
 
-@st.cache_data(ttl=600, show_spinner=False)
+@st.cache_data(ttl=600, show_spinner="🔗 Fetching data from MySQL... ⏳")
 def load_data():
     load_dotenv()
     db_url = f"mysql+mysqlconnector://{os.getenv('MYSQL_USER')}:{os.getenv('MYSQL_PASSWORD')}@{os.getenv('MYSQL_HOST')}:{os.getenv('MYSQL_PORT')}/{os.getenv('MYSQL_DATABASE')}"
     engine = create_engine(db_url)
 
-    with st.status("🔗 Establishing Secure Uplink to MySQL...", expanded=True) as status:
-        st.write("Connecting to database...")
-        time.sleep(0.4)
-        st.write("Extracting accident records...")
-        df = pd.read_sql("SELECT * FROM accident_records", con=engine)
-        time.sleep(0.4)
-        status.update(label="Data successfully loaded!", state="complete", expanded=False)
-
+    # Just grab the data directly, no manual UI status inside the cache!
+    df = pd.read_sql("SELECT * FROM accident_records", con=engine)
     return df
 
 df = load_data()
@@ -135,7 +128,6 @@ cleaned = preprocess_data(df)
 # --------------------------------------------------
 # SIDEBAR NAVIGATION
 # --------------------------------------------------
-
 st.sidebar.title("Navigation 🧭")
 
 # Notice how the CSS we added above will completely transform these radio buttons!
