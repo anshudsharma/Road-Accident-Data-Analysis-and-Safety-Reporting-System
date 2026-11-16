@@ -1,0 +1,18 @@
+# Environment variables (Keeps your database password safe!)
+.env
+.env.*
+!.env.example
+
+# Python & Virtual Environment
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# Local databases (just in case)
+*.db
+*.sqlite3
