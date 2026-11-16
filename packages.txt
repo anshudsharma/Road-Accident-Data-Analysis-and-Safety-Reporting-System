@@ -1,1 +1,15 @@
-r-base
+
+ggplot2
+dplyr
+tidyr
+readr
+data.table
+lubridate
+forecast
+caret
+randomForest
+e1071
+corrplot
+psych
+scales
+RColorBrewer
