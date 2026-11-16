@@ -636,7 +636,7 @@ elif page == "🧪 R Statistical Analysis":
     st.write("Compare the distribution of casualties between Fatal and Slight accidents.")
 
     try:
-        mw_result = mann_whitney_test(cleaned, group_col='Severity', target_col='Casualties', group1='Fatal', group2='Slight')
+        mw_result = mann_whitney_test(cleaned, group_col='severity', target_col='casualties', group1='Fatal', group2='Minor')
 
         m1, m2, m3 = st.columns(3)
         m1.metric("U-Statistic", f"{mw_result['statistic']:.2f}")
@@ -659,7 +659,7 @@ elif page == "🧪 R Statistical Analysis":
     with st.spinner("Mining association rules..."):
         try:
             # Adjust these column names to match your exact dataset columns if needed
-            cols_to_mine = ['Weather', 'Road Type', 'Severity']
+            cols_to_mine = ['weather', 'road_type', 'severity']
 
             rules = apriori_association(cleaned, cols_to_mine, min_support=0.05)
 
