@@ -3,7 +3,12 @@ import os
 import shutil
 import subprocess
 from pathlib import Path
-
+from analysis import (
+    get_summary,
+    # ... your existing imports ...
+    mann_whitney_test,
+    apriori_association
+)
 import streamlit as st
 import pandas as pd
 
@@ -612,244 +617,57 @@ elif page == "📈 Statistical Analysis":
         st.error(
             f"Correlation error: {e}"
         )
-
-
 # ============================================================
-# 12. R STATISTICAL ANALYSIS
+# 12. ADVANCED STATS & APRIORI (PYTHON NATIVE)
 # ============================================================
 
 elif page == "🧪 R Statistical Analysis":
 
-    st.header("R Statistical Analysis Engine")
+    cleaned = st.session_state["cleaned"]
 
-    st.write(
-        "Run statistical tests, Apriori association mining, "
-        "Bayesian analysis, time-series analysis and ggplot2 "
-        "visualizations using R."
-    )
+    if cleaned is None:
+        st.warning("Please go to Data Preprocessing and clean the dataset first!")
+        st.stop()
+
+    st.header("Advanced Statistical & Association Analysis")
+    st.markdown("---")
+
+    st.subheader("1. Mann-Whitney U Test")
+    st.write("Compare the distribution of casualties between Fatal and Slight accidents.")
+
+    try:
+        mw_result = mann_whitney_test(cleaned, group_col='Severity', target_col='Casualties', group1='Fatal', group2='Slight')
+
+        m1, m2, m3 = st.columns(3)
+        m1.metric("U-Statistic", f"{mw_result['statistic']:.2f}")
+        m2.metric("P-value", f"{mw_result['p_value']:.4f}")
+        m3.metric("Sample Sizes", f"{mw_result['g1_size']} vs {mw_result['g2_size']}")
+
+        if mw_result['p_value'] < 0.05:
+            st.success("Statistically significant difference in casualties between Fatal and Slight accidents.")
+        else:
+            st.info("No statistically significant difference detected.")
+
+    except Exception as e:
+        st.warning("Could not run test. Ensure 'Severity' and 'Casualties' columns exist and contain 'Fatal' and 'Slight'.")
 
     st.markdown("---")
 
-    col1, col2, col3, col4 = st.columns(4)
+    st.subheader("2. Apriori Association Rules")
+    st.write("Discover patterns and associations between Weather, Road Type, and Severity.")
 
-    col1.metric("Language", "R")
-    col2.metric("Statistical Tests", "Multiple")
-    col3.metric("Association", "Apriori")
-    col4.metric("Visualization", "ggplot2")
-
-    st.markdown("---")
-
-    st.subheader("Analysis Modules")
-
-    with st.expander(
-        "1. Statistical Testing",
-        expanded=True
-    ):
-
-        st.write("""
-        - Mann-Whitney U Test
-        - Independent T-test
-        - Shapiro-Wilk Normality Test
-        - One-way ANOVA
-        - Kruskal-Wallis Test
-        - Chi-square Test
-        - Fisher Exact Test
-        """)
-
-    with st.expander("2. Apriori Association Analysis"):
-
-        st.write("""
-        - Frequent itemsets
-        - Association rules
-        - Support
-        - Confidence
-        - Lift
-        - Minor severity association rules
-        """)
-
-    with st.expander("3. Bayesian Analysis"):
-
-        st.write("""
-        - Probability of fatal accidents
-        - Weather-wise fatality probability
-        - Beta-Binomial model
-        - 95% credible intervals
-        """)
-
-    with st.expander("4. Time Series Analysis"):
-
-        st.write("""
-        - Monthly accident frequency
-        - Monthly casualty totals
-        - Moving averages
-        - Linear trend analysis
-        """)
-
-    with st.expander("5. ggplot2 Visualizations"):
-
-        st.write("""
-        - Accident severity chart
-        - Weather analysis chart
-        - Road type chart
-        - Monthly accident trend
-        - Casualty distribution
-        """)
-
-    st.markdown("---")
-
-    if st.button(
-        "🚀 Run Complete R Statistical Analysis",
-        type="primary",
-        use_container_width=True
-    ):
-
+    with st.spinner("Mining association rules..."):
         try:
+            # Adjust these column names to match your exact dataset columns if needed
+            cols_to_mine = ['Weather', 'Road Type', 'Severity']
 
-            with st.spinner(
-                "Running R statistical engine... Please wait."
-            ):
+            rules = apriori_association(cleaned, cols_to_mine, min_support=0.05)
 
-                stdout, stderr = run_r_analysis()
-
-            st.session_state["r_stdout"] = stdout
-            st.session_state["r_stderr"] = stderr
-            st.session_state["r_success"] = True
-
-            st.success(
-                "R statistical analysis completed successfully!"
-            )
-
-        except subprocess.TimeoutExpired:
-
-            st.session_state["r_success"] = False
-
-            st.error(
-                "R analysis exceeded the 5-minute execution limit."
-            )
+            if rules is not None and not rules.empty:
+                st.dataframe(rules.head(15), use_container_width=True)
+                st.success(f"Found {len(rules)} significant association rules!")
+            else:
+                st.info("No strong association rules found at the current support threshold.")
 
         except Exception as e:
-
-            st.session_state["r_success"] = False
-
-            st.error(
-                f"R execution failed: {e}"
-            )
-
-    # DISPLAY R OUTPUT
-
-    if st.session_state.get("r_success", False):
-
-        st.markdown("---")
-
-        st.subheader("R Statistical Results")
-
-        stdout = st.session_state.get(
-            "r_stdout", ""
-        )
-
-        st.code(
-            stdout,
-            language="text"
-        )
-
-        stderr = st.session_state.get(
-            "r_stderr", ""
-        )
-
-        if stderr.strip():
-
-            with st.expander("R Warnings and Messages"):
-
-                st.code(
-                    stderr,
-                    language="text"
-                )
-
-        # DISPLAY GENERATED PLOTS
-
-        st.markdown("---")
-
-        st.subheader(
-            "R Data Visualizations (ggplot2)"
-        )
-
-        plot_files = {
-            "Accident Severity": "severity.png",
-            "Weather Conditions": "weather.png",
-            "Road Type": "road_type.png",
-            "Monthly Accident Trend": "monthly_trend.png",
-            "Casualty Distribution": "casualty_histogram.png"
-        }
-
-        available_plots = []
-
-        for title, filename in plot_files.items():
-
-            plot_path = PLOT_DIR / filename
-
-            if plot_path.is_file():
-                available_plots.append(
-                    (title, plot_path)
-                )
-
-        if available_plots:
-
-            for i in range(
-                0,
-                len(available_plots),
-                2
-            ):
-
-                columns = st.columns(2)
-
-                for j, (title, path) in enumerate(
-                    available_plots[i:i + 2]
-                ):
-
-                    with columns[j]:
-
-                        st.write(f"**{title}**")
-
-                        st.image(
-                            str(path),
-                            use_container_width=True
-                        )
-
-        else:
-
-            st.info(
-                "No ggplot2 images found. Update the R script "
-                "to save charts inside reports/plots/."
-            )
-
-        # DOWNLOAD REPORT FILES
-
-        st.markdown("---")
-
-        st.subheader("Download R Analysis Reports")
-
-        for filename in [
-            "accident_analysis_data.csv",
-            "bayesian_analysis.csv",
-            "monthly_accident_analysis.csv"
-        ]:
-
-            file_path = REPORT_DIR / filename
-
-            if file_path.is_file():
-
-                with open(file_path, "rb") as file:
-
-                    st.download_button(
-                        label=f"📥 Download {filename}",
-                        data=file.read(),
-                        file_name=filename,
-                        mime="text/csv",
-                        key=f"download_{filename}"
-                    )
-
-    st.markdown("---")
-
-    st.caption(
-        "Python + R + Pandas + Streamlit"
-    )
+            st.error(f"Apriori analysis failed: {e}. Check column names.")
