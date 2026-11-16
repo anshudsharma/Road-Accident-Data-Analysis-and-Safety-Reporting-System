@@ -683,6 +683,5 @@ elif page == "🧪 R Statistical Analysis":
     st.markdown("---")
 
     st.caption(
-        "Road Accident Data Analysis and Safety Reporting System | "
         "Python + R + MySQL + Streamlit"
     )
