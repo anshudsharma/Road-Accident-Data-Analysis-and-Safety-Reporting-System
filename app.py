@@ -236,7 +236,6 @@ except Exception as e:
 # 7. SIDEBAR NAVIGATION
 # ============================================================
 
-st.sidebar.title("Navigation 🧭")
 
 page = st.sidebar.radio(
     "Select Analysis Module:",
