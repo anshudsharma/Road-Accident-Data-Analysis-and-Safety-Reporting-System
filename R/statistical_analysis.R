@@ -1,10 +1,4 @@
 
-# ============================================================
-# ROAD ACCIDENT DATA ANALYSIS AND SAFETY REPORTING SYSTEM
-# Statistical Analysis using R
-# Python + R + MySQL + Streamlit
-# ============================================================
-
 options(warn = -1)
 
 suppressPackageStartupMessages({
@@ -14,14 +8,9 @@ suppressPackageStartupMessages({
   library(lubridate)
 })
 
-# ============================================================
-# 1. LOAD DATA
-# ============================================================
 
 cat("\n🚗 Loading accident data...\n")
 
-# Accept CSV path from Streamlit.
-# If no argument is supplied, use sample CSV.
 
 args <- commandArgs(trailingOnly = TRUE)
 
@@ -59,9 +48,6 @@ dir.create(
   showWarnings = FALSE
 )
 
-# ============================================================
-# 2. FIND REQUIRED COLUMNS
-# ============================================================
 
 find_col <- function(options) {
 
