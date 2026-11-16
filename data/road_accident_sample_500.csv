@@ -1,0 +1,506 @@
+accident_id,date,time,state,city,road_type,weather,light_condition,severity,vehicles_involved,casualties,main_cause
+RA10001,2025-02-11,19:30,Uttar Pradesh,Ghaziabad,Residential Road,Rainy,Evening,Minor,3,1.0,Over-speeding
+RA10002,2025-08-26,17:15,Rajasthan,Jaipur,Highway,Cloudy,Day,Minor,2,0.0,Poor road condition
+RA10003,2025-12-18,13:00,Tamil Nadu,Chennai,Intersection,Clear,Day,Minor,2,1.0,Other
+RA10004,2025-11-13,21:15,Maharashtra,Pune,Residential Road,Clear,Evening,Minor,3,1.0,Weather
+RA10005,2025-04-11,03:30,Maharashtra,Pune,Urban Road,Foggy,Night,Serious,1,2.0,Over-speeding
+RA10006,2025-06-15,22:00,Gujarat,Ahmedabad,Intersection,Clear,Evening,Minor,3,0.0,Over-speeding
+RA10007,2025-07-13,20:45,Uttar Pradesh,Ghaziabad,,Rainy,Evening,Fatal,2,3.0,Other
+RA10008,2025-04-01,12:15,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,1,1.0,Other
+RA10009,2025-04-09,17:45,Delhi,New Delhi,Urban Road,Clear,Day,Serious,1,3.0,Drunk driving
+RA10010,2025-03-28,12:30,Uttar Pradesh,Ghaziabad,Residential Road,Rainy,Day,Minor,3,1.0,Poor road condition
+RA10011,2025-12-30,06:15,Karnataka,Bengaluru,Urban Road,Clear,Day,Serious,2,1.0,Driver distraction
+RA10012,2025-09-30,19:00,West Bengal,Kolkata,Urban Road,Clear,Evening,Serious,3,2.0,Driver distraction
+RA10013,2025-11-03,05:30,Rajasthan,Jaipur,Urban Road,Rainy,Night,Minor,3,1.0,Over-speeding
+RA10014,2025-10-26,07:15,Rajasthan,Jaipur,Highway,Rainy,Day,Fatal,2,2.0,Over-speeding
+RA10015,2025-12-17,12:00,Rajasthan,Jaipur,Highway,Cloudy,Day,Minor,2,0.0,Over-speeding
+RA10016,2025-02-08,20:45,Rajasthan,Jaipur,Highway,Clear,Evening,Minor,2,1.0,Weather
+RA10017,2025-11-18,09:15,Karnataka,Bengaluru,Urban Road,Clear,Day,Serious,3,2.0,Over-speeding
+RA10018,2025-01-25,11:00,Uttar Pradesh,Lucknow,Urban Road,Cloudy,Day,Serious,1,3.0,Over-speeding
+RA10019,2025-06-23,00:15,Gujarat,Ahmedabad,Highway,Clear,Night,Minor,2,0.0,Drunk driving
+RA10020,2025-08-05,02:15,Maharashtra,Pune,Urban Road,Clear,Night,Minor,2,0.0,Over-speeding
+RA10021,2025-05-11,01:45,Karnataka,Bengaluru,Residential Road,Clear,Night,Serious,2,2.0,Over-speeding
+RA10022,2025-02-23,01:30,Maharashtra,Mumbai,Urban Road,Clear,Night,Serious,3,3.0,Drunk driving
+RA10023,2025-03-12,20:00,Uttar Pradesh,Lucknow,Urban Road,Cloudy,Evening,Fatal,2,3.0,Driver distraction
+RA10024,2025-10-29,20:00,West Bengal,Kolkata,Urban Road,Rainy,Evening,Minor,2,1.0,Poor road condition
+RA10025,2025-04-27,19:30,Rajasthan,Jaipur,Highway,Rainy,Evening,Serious,2,1.0,Other
+RA10026,2025-04-24,01:00,Tamil Nadu,Chennai,Urban Road,Clear,Night,Minor,1,1.0,Over-speeding
+RA10027,2025-12-04,01:15,Maharashtra,Pune,Residential Road,Clear,Night,Fatal,2,1.0,Other
+RA10028,2025-02-22,06:00,Gujarat,Ahmedabad,Urban Road,Clear,Day,Minor,3,1.0,Other
+RA10029,2025-12-01,13:00,Karnataka,Bengaluru,Highway,Clear,Day,Serious,2,2.0,Weather
+RA10030,2025-12-03,08:45,Maharashtra,Pune,Highway,Clear,Day,Minor,2,1.0,
+RA10031,2025-08-07,11:00,Maharashtra,Pune,Urban Road,Clear,Day,Minor,3,1.0,Poor road condition
+RA10032,2025-03-02,04:00,Delhi,New Delhi,Highway,Clear,Night,Serious,1,3.0,Poor road condition
+RA10033,2025-02-26,17:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10034,2025-04-14,07:00,Karnataka,Bengaluru,Highway,Rainy,Day,Fatal,2,3.0,Over-speeding
+RA10035,2025-07-30,01:45,Gujarat,Ahmedabad,Urban Road,Clear,Night,Minor,4,1.0,Other
+RA10036,2025-02-26,17:00,Uttar Pradesh,Ghaziabad,Residential Road,Clear,Day,Serious,2,1.0,Drunk driving
+RA10037,2025-06-16,21:00,Gujarat,Ahmedabad,Intersection,Rainy,Evening,Minor,2,0.0,Weather
+RA10038,2025-02-12,00:00,Gujarat,Ahmedabad,Urban Road,Rainy,Night,Minor,1,1.0,Driver distraction
+RA10039,2025-07-17,10:30,Delhi,New Delhi,Highway,Foggy,Day,Minor,2,1.0,Over-speeding
+RA10040,2025-01-08,19:30,Tamil Nadu,Chennai,Residential Road,Clear,Evening,Minor,2,1.0,Driver distraction
+RA10041,2025-09-16,16:15,Uttar Pradesh,Lucknow,Urban Road,Foggy,Day,Minor,2,1.0,Driver distraction
+RA10042,2025-01-21,20:00,Rajasthan,Jaipur,Residential Road,,Evening,Serious,3,2.0,Driver distraction
+RA10043,2025-03-13,09:00,Rajasthan,Jaipur,Highway,Clear,Day,Serious,3,2.0,Driver distraction
+RA10044,2025-03-05,08:30,Maharashtra,Mumbai,Intersection,Clear,Day,Serious,2,3.0,
+RA10045,2025-10-31,17:00,Uttar Pradesh,Ghaziabad,Intersection,Clear,Day,Minor,3,1.0,Drunk driving
+RA10046,2025-01-20,03:30,West Bengal,Kolkata,Urban Road,Clear,Night,Minor,4,0.0,Driver distraction
+RA10047,2025-06-06,05:30,Maharashtra,Pune,Highway,Clear,Night,Minor,2,1.0,Other
+RA10048,2025-08-04,14:45,Gujarat,Ahmedabad,Highway,Rainy,Day,Serious,2,2.0,Over-speeding
+RA10049,2025-07-08,16:15,Tamil Nadu,Chennai,Urban Road,Clear,Day,Serious,3,3.0,Driver distraction
+RA10050,2025-09-06,02:00,Rajasthan,Jaipur,Urban Road,Clear,Night,Minor,2,1.0,Over-speeding
+RA10051,2025-10-21,12:15,Rajasthan,Jaipur,Intersection,Clear,Day,Serious,3,3.0,Drunk driving
+RA10052,2025-05-24,08:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,1,0.0,Driver distraction
+RA10053,2025-10-30,12:30,Maharashtra,Mumbai,Highway,Clear,Day,Minor,2,1.0,Poor road condition
+RA10054,2025-04-27,23:30,Maharashtra,Pune,Residential Road,Clear,Evening,Minor,3,0.0,Other
+RA10055,2025-12-26,01:15,Maharashtra,Pune,Urban Road,Clear,Night,Minor,2,1.0,Over-speeding
+RA10056,2025-07-04,23:00,Uttar Pradesh,Ghaziabad,Highway,Rainy,Evening,Serious,2,1.0,Poor road condition
+RA10057,2025-09-26,10:45,Karnataka,Bengaluru,Intersection,Cloudy,Day,Fatal,2,2.0,Over-speeding
+RA10058,2025-11-16,18:45,Uttar Pradesh,Lucknow,Highway,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10059,2025-10-17,10:45,Rajasthan,Jaipur,Urban Road,Rainy,Day,Minor,2,1.0,Driver distraction
+RA10060,2025-11-07,07:45,Tamil Nadu,Chennai,Urban Road,Foggy,Day,Serious,2,2.0,Over-speeding
+RA10061,2025-07-15,18:15,West Bengal,Kolkata,Intersection,Cloudy,Evening,Fatal,2,2.0,Drunk driving
+RA10062,2025-01-16,16:15,Rajasthan,Jaipur,Urban Road,Clear,Day,Serious,2,1.0,Poor road condition
+RA10063,2025-06-29,03:00,Maharashtra,Mumbai,Highway,Cloudy,Night,Minor,2,1.0,Poor road condition
+RA10064,2025-03-08,16:45,West Bengal,Kolkata,Urban Road,Cloudy,Day,Serious,3,1.0,Driver distraction
+RA10065,2025-11-21,18:30,Maharashtra,Pune,Highway,Rainy,Evening,Minor,2,0.0,Drunk driving
+RA10066,2025-03-28,09:15,Maharashtra,Mumbai,Intersection,Clear,Day,Fatal,2,2.0,Driver distraction
+RA10067,2025-03-25,22:45,West Bengal,Kolkata,Highway,Clear,Evening,Minor,2,0.0,Over-speeding
+RA10068,2025-04-02,15:30,Maharashtra,Mumbai,Intersection,Clear,Day,Serious,2,1.0,Over-speeding
+RA10069,2025-08-23,08:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Minor,3,1.0,Poor road condition
+RA10070,2025-07-28,00:45,Maharashtra,Pune,Highway,Clear,Night,Minor,2,1.0,Other
+RA10071,2025-12-13,16:00,Rajasthan,Jaipur,Intersection,Clear,Day,Serious,1,1.0,Over-speeding
+RA10072,2025-06-01,05:15,Uttar Pradesh,Lucknow,Highway,Clear,Night,Serious,4,3.0,Drunk driving
+RA10073,2025-04-14,18:30,Maharashtra,Pune,Urban Road,Clear,Evening,Minor,3,1.0,Poor road condition
+RA10074,2025-01-18,12:45,Uttar Pradesh,Lucknow,Intersection,Foggy,Day,Fatal,2,1.0,Weather
+RA10075,2025-01-03,11:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Serious,3,3.0,Drunk driving
+RA10076,2025-05-17,03:15,Maharashtra,Pune,Highway,Clear,Night,Minor,3,1.0,Drunk driving
+RA10077,2025-12-04,17:30,Maharashtra,Mumbai,Intersection,Rainy,Day,Minor,2,1.0,Poor road condition
+RA10078,2025-07-11,03:45,Delhi,New Delhi,Urban Road,Foggy,Night,Minor,2,0.0,Other
+RA10079,2025-11-23,10:00,Karnataka,Bengaluru,Urban Road,,Day,Serious,2,1.0,Over-speeding
+RA10080,2025-02-07,20:30,Tamil Nadu,Chennai,Urban Road,Foggy,Evening,Minor,2,0.0,Other
+RA10081,2025-02-04,22:15,West Bengal,Kolkata,Urban Road,Cloudy,Evening,Minor,2,0.0,Over-speeding
+RA10082,2025-11-01,23:00,Maharashtra,Pune,Urban Road,Clear,Evening,Fatal,1,4.0,Weather
+RA10083,2025-02-08,22:30,Uttar Pradesh,Lucknow,,Clear,Evening,Fatal,2,3.0,Over-speeding
+RA10084,2025-01-19,13:15,Gujarat,Ahmedabad,Urban Road,Clear,Day,Serious,3,2.0,Over-speeding
+RA10085,2025-05-28,04:30,Tamil Nadu,Chennai,Residential Road,Clear,Night,Fatal,3,3.0,Over-speeding
+RA10086,2025-12-04,20:15,Rajasthan,Jaipur,Urban Road,Cloudy,Evening,Serious,2,3.0,Driver distraction
+RA10087,2025-09-09,19:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Evening,Serious,2,2.0,Driver distraction
+RA10088,2025-02-06,23:00,Maharashtra,Mumbai,Urban Road,Clear,Evening,Serious,2,1.0,Over-speeding
+RA10089,2025-11-02,15:45,Rajasthan,Jaipur,Residential Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10090,2025-11-04,03:00,Gujarat,Ahmedabad,Highway,Clear,Night,Minor,3,0.0,Driver distraction
+RA10091,2025-10-20,12:30,Maharashtra,Pune,Urban Road,Clear,Day,Minor,3,1.0,Weather
+RA10092,2025-11-26,10:15,Gujarat,Ahmedabad,Intersection,Clear,Day,Serious,3,2.0,Other
+RA10093,2025-03-29,20:15,Gujarat,Ahmedabad,Highway,Cloudy,Evening,Minor,3,0.0,Poor road condition
+RA10094,2025-12-24,09:00,Maharashtra,Mumbai,Urban Road,Clear,Day,Minor,4,0.0,Over-speeding
+RA10095,2025-04-28,07:30,Gujarat,Ahmedabad,Intersection,Foggy,Day,Serious,2,3.0,Over-speeding
+RA10096,2025-10-20,01:00,Delhi,New Delhi,Urban Road,Rainy,Night,Minor,1,1.0,Other
+RA10097,2025-07-31,20:30,Delhi,New Delhi,Urban Road,Clear,Evening,Minor,1,0.0,Over-speeding
+RA10098,2025-10-12,18:30,Tamil Nadu,Chennai,Highway,Clear,Evening,Serious,2,1.0,Driver distraction
+RA10099,2025-08-18,00:45,Tamil Nadu,Chennai,Urban Road,Foggy,Night,Serious,2,1.0,Other
+RA10100,2025-08-23,10:30,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,2,1.0,Other
+RA10101,2025-08-13,11:15,Gujarat,Ahmedabad,Residential Road,Cloudy,Day,Minor,4,0.0,Driver distraction
+RA10102,2025-10-12,11:30,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10103,2025-09-27,22:45,Gujarat,Ahmedabad,Residential Road,Rainy,Evening,Serious,4,2.0,Driver distraction
+RA10104,2025-02-19,03:15,Uttar Pradesh,Ghaziabad,Intersection,Foggy,Night,Serious,3,2.0,Poor road condition
+RA10105,2025-10-29,07:00,Rajasthan,Jaipur,Highway,Clear,Day,Minor,2,0.0,Over-speeding
+RA10106,2025-07-15,04:45,Rajasthan,Jaipur,Residential Road,Clear,Night,Serious,2,2.0,Over-speeding
+RA10107,2025-04-28,05:00,Rajasthan,Jaipur,Residential Road,Cloudy,Night,Minor,2,0.0,Drunk driving
+RA10108,2025-07-07,21:30,Tamil Nadu,Chennai,Intersection,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10109,2025-12-19,22:00,Maharashtra,Pune,Urban Road,Clear,Evening,Fatal,2,2.0,Poor road condition
+RA10110,2025-11-10,01:00,Rajasthan,Jaipur,Urban Road,Clear,Night,Minor,3,0.0,Driver distraction
+RA10111,2025-11-01,15:45,Delhi,New Delhi,Highway,Clear,Day,Minor,2,,Other
+RA10112,2025-06-18,05:00,Rajasthan,Jaipur,Highway,Rainy,Night,Minor,2,1.0,Weather
+RA10113,2025-10-14,04:30,Karnataka,Bengaluru,Urban Road,Rainy,Night,Serious,2,3.0,Driver distraction
+RA10114,2025-05-21,07:30,Maharashtra,Pune,Highway,Clear,Day,Fatal,2,2.0,Weather
+RA10115,2025-09-08,04:00,Karnataka,Bengaluru,Urban Road,Foggy,Night,Fatal,2,3.0,Over-speeding
+RA10116,2025-08-22,11:00,Karnataka,Bengaluru,Intersection,Clear,Day,Minor,2,1.0,Driver distraction
+RA10117,2025-04-02,23:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10118,2025-04-08,14:30,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Serious,2,2.0,Other
+RA10119,2025-01-23,17:00,Delhi,New Delhi,,Cloudy,Day,Minor,2,0.0,Weather
+RA10120,2025-02-21,11:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Serious,2,2.0,Other
+RA10121,2025-06-08,00:15,Maharashtra,Pune,Urban Road,Clear,Night,Serious,2,2.0,Other
+RA10122,2025-06-24,02:00,Tamil Nadu,Chennai,Urban Road,Clear,Night,Minor,2,1.0,Other
+RA10123,2025-03-02,06:45,Tamil Nadu,Chennai,Urban Road,Foggy,Day,Serious,2,2.0,Over-speeding
+RA10124,2025-06-02,05:00,Maharashtra,Pune,Urban Road,Clear,Night,Minor,2,1.0,
+RA10125,2025-08-09,20:30,Gujarat,Ahmedabad,Urban Road,Clear,Evening,Minor,2,0.0,Drunk driving
+RA10126,2025-03-26,20:45,Karnataka,Bengaluru,Urban Road,Rainy,Evening,Minor,2,1.0,Driver distraction
+RA10127,2025-05-04,20:30,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Evening,Minor,2,1.0,Drunk driving
+RA10128,2025-05-15,15:30,Rajasthan,Jaipur,Urban Road,Clear,Day,Serious,1,1.0,Driver distraction
+RA10129,2025-07-04,13:15,Karnataka,Bengaluru,Urban Road,Clear,Day,Serious,2,1.0,Over-speeding
+RA10130,2025-05-14,15:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Fatal,3,4.0,Over-speeding
+RA10131,2025-09-26,09:30,Karnataka,Bengaluru,Urban Road,Clear,Day,Fatal,2,2.0,Over-speeding
+RA10132,2025-04-30,16:45,Karnataka,Bengaluru,Residential Road,Foggy,Day,Minor,3,1.0,Driver distraction
+RA10133,2025-06-08,19:00,Uttar Pradesh,Ghaziabad,Intersection,Rainy,Evening,Minor,1,1.0,Other
+RA10134,2025-05-19,18:45,Karnataka,Bengaluru,Intersection,Rainy,Evening,Serious,1,3.0,Poor road condition
+RA10135,2025-03-08,14:15,Rajasthan,Jaipur,Highway,Cloudy,Day,Fatal,2,1.0,Drunk driving
+RA10136,2025-09-08,01:30,Maharashtra,Mumbai,Highway,Clear,Night,Minor,3,0.0,Driver distraction
+RA10137,2025-03-27,17:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,3,1.0,Driver distraction
+RA10138,2025-04-19,08:30,Uttar Pradesh,Ghaziabad,,Cloudy,Day,Minor,1,1.0,Over-speeding
+RA10139,2025-10-17,17:00,Maharashtra,Mumbai,Residential Road,Clear,Day,Minor,3,0.0,Weather
+RA10140,2025-12-13,12:15,Maharashtra,Pune,Residential Road,Rainy,Day,Serious,2,1.0,Over-speeding
+RA10141,2025-09-02,21:30,West Bengal,Kolkata,Intersection,Rainy,Evening,Minor,2,0.0,Poor road condition
+RA10142,2025-12-01,08:00,Delhi,New Delhi,Highway,Clear,Day,Serious,2,3.0,Poor road condition
+RA10143,2025-11-08,22:15,Delhi,New Delhi,Residential Road,Clear,Evening,Serious,4,3.0,Drunk driving
+RA10144,2025-06-25,20:30,Maharashtra,Pune,Residential Road,Clear,Evening,Serious,1,1.0,Other
+RA10145,2025-10-09,07:00,West Bengal,Kolkata,Urban Road,Clear,Day,Minor,3,0.0,Over-speeding
+RA10146,2025-04-30,11:15,Gujarat,Ahmedabad,Intersection,Clear,Day,Minor,2,0.0,Other
+RA10147,2025-06-18,12:15,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Serious,3,3.0,Poor road condition
+RA10148,2025-07-15,18:30,Delhi,New Delhi,Intersection,Rainy,Evening,Serious,2,2.0,Weather
+RA10149,2025-12-17,16:45,Gujarat,Ahmedabad,Residential Road,Cloudy,Day,Minor,3,0.0,Poor road condition
+RA10150,2025-11-06,20:45,Uttar Pradesh,Ghaziabad,Urban Road,Foggy,Evening,Serious,2,1.0,Other
+RA10151,2025-06-28,08:00,Gujarat,Ahmedabad,Residential Road,Clear,Day,Minor,1,1.0,Other
+RA10152,2025-08-27,12:00,Delhi,New Delhi,Urban Road,Clear,Day,Serious,2,2.0,Driver distraction
+RA10153,2025-03-15,10:00,West Bengal,Kolkata,Residential Road,Clear,Day,Minor,2,0.0,Weather
+RA10154,2025-10-21,21:30,Delhi,New Delhi,Residential Road,Clear,Evening,Minor,1,1.0,Poor road condition
+RA10155,2025-07-21,07:00,Maharashtra,Pune,Highway,Cloudy,Day,Minor,2,0.0,Driver distraction
+RA10156,2025-07-14,14:00,Tamil Nadu,Chennai,Intersection,Clear,Day,Minor,2,0.0,
+RA10157,2025-10-07,02:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Night,Minor,1,1.0,Driver distraction
+RA10158,2025-08-20,20:45,Karnataka,Bengaluru,Urban Road,Foggy,Evening,Minor,1,1.0,Drunk driving
+RA10159,2025-01-27,09:45,Karnataka,Bengaluru,Highway,Clear,Day,Minor,3,0.0,Over-speeding
+RA10160,2025-04-16,08:15,Rajasthan,Jaipur,Urban Road,Clear,Day,Serious,2,1.0,Over-speeding
+RA10161,2025-03-06,13:30,West Bengal,Kolkata,Highway,Clear,Day,Minor,4,0.0,Other
+RA10162,2025-09-26,11:30,Tamil Nadu,Chennai,Urban Road,Rainy,Day,Serious,4,3.0,Driver distraction
+RA10163,2025-01-13,20:00,Maharashtra,Pune,Urban Road,Rainy,Evening,Serious,1,2.0,Driver distraction
+RA10164,2025-03-15,12:30,Maharashtra,Pune,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10165,2025-08-07,12:30,Maharashtra,Pune,Intersection,Cloudy,Day,Minor,2,1.0,Driver distraction
+RA10166,2025-09-11,02:15,Gujarat,Ahmedabad,Urban Road,Foggy,Night,Serious,2,2.0,Weather
+RA10167,2025-07-03,00:45,Maharashtra,Mumbai,Intersection,Foggy,Night,Serious,1,2.0,Other
+RA10168,2025-11-11,09:30,Uttar Pradesh,Lucknow,Highway,Clear,Day,Minor,2,,Over-speeding
+RA10169,2025-12-02,23:30,Maharashtra,Mumbai,Urban Road,Clear,Evening,Serious,1,2.0,Drunk driving
+RA10170,2025-02-18,22:30,Uttar Pradesh,Ghaziabad,Highway,Foggy,Evening,Minor,2,1.0,Driver distraction
+RA10171,2025-12-14,15:45,Uttar Pradesh,Lucknow,Highway,Clear,Day,Minor,4,1.0,Drunk driving
+RA10172,2025-08-13,15:30,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Serious,2,3.0,Driver distraction
+RA10173,2025-08-21,09:15,Rajasthan,Jaipur,Highway,Rainy,Day,Minor,2,1.0,Driver distraction
+RA10174,2025-02-04,04:45,Rajasthan,Jaipur,Urban Road,Clear,Night,Serious,4,2.0,Driver distraction
+RA10175,2025-08-15,00:30,Tamil Nadu,Chennai,Urban Road,Rainy,Night,Minor,2,0.0,Drunk driving
+RA10176,2025-09-22,08:45,Maharashtra,Pune,Highway,Cloudy,Day,Serious,1,2.0,Driver distraction
+RA10177,2025-07-31,07:00,Rajasthan,Jaipur,Highway,Rainy,Day,Minor,3,1.0,Driver distraction
+RA10178,2025-01-31,04:15,Uttar Pradesh,Lucknow,Residential Road,Clear,Night,Minor,2,1.0,Weather
+RA10179,2025-07-10,06:45,West Bengal,Kolkata,Urban Road,Foggy,Day,Minor,1,0.0,Poor road condition
+RA10180,2025-12-08,00:30,Karnataka,Bengaluru,Intersection,Clear,Night,Minor,2,0.0,Driver distraction
+RA10181,2025-09-22,14:45,West Bengal,Kolkata,Residential Road,Rainy,Day,Serious,3,2.0,Weather
+RA10182,2025-02-20,22:00,Uttar Pradesh,Lucknow,Intersection,Foggy,Evening,Minor,2,1.0,Other
+RA10183,2025-12-17,16:00,Maharashtra,Pune,Residential Road,Rainy,Day,Minor,2,0.0,Over-speeding
+RA10184,2025-12-16,10:45,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,2,0.0,Drunk driving
+RA10185,2025-03-03,10:15,Maharashtra,Pune,Highway,Clear,Day,Minor,1,0.0,Over-speeding
+RA10186,2025-10-20,07:30,Maharashtra,Pune,Urban Road,Clear,Day,Serious,1,3.0,Poor road condition
+RA10187,2025-05-29,03:15,Uttar Pradesh,Lucknow,Residential Road,Clear,Night,Minor,2,0.0,Over-speeding
+RA10188,2025-08-05,14:15,Maharashtra,Mumbai,Highway,Clear,Day,Fatal,3,1.0,Poor road condition
+RA10189,2025-06-12,13:45,Delhi,New Delhi,Urban Road,Clear,Day,Minor,1,0.0,Over-speeding
+RA10190,2025-10-13,00:00,Maharashtra,Mumbai,Intersection,Clear,Night,Serious,2,1.0,Driver distraction
+RA10191,2025-12-30,09:45,Tamil Nadu,Chennai,Urban Road,Rainy,Day,Minor,2,0.0,Other
+RA10192,2025-10-18,06:45,Tamil Nadu,Chennai,Highway,Cloudy,Day,Minor,1,1.0,Driver distraction
+RA10193,2025-12-06,04:30,Tamil Nadu,Chennai,Residential Road,Clear,Night,Serious,2,2.0,Other
+RA10194,2025-12-12,16:15,Maharashtra,Mumbai,Urban Road,Rainy,Day,Fatal,2,4.0,Other
+RA10195,2025-02-02,12:00,West Bengal,Kolkata,Highway,Rainy,Day,Serious,2,3.0,Other
+RA10196,2025-04-03,15:30,Uttar Pradesh,Ghaziabad,Residential Road,Clear,Day,Minor,2,1.0,Over-speeding
+RA10197,2025-09-21,17:15,Maharashtra,Mumbai,Urban Road,Clear,Day,Minor,2,0.0,Weather
+RA10198,2025-08-04,23:00,Uttar Pradesh,Lucknow,Highway,Rainy,Evening,Serious,1,3.0,Over-speeding
+RA10199,2025-01-19,19:15,Maharashtra,Mumbai,Urban Road,Cloudy,Evening,Minor,2,0.0,Driver distraction
+RA10200,2025-02-04,14:45,West Bengal,Kolkata,Residential Road,Rainy,Day,Serious,3,2.0,
+RA10201,2025-07-09,21:15,Maharashtra,Mumbai,Urban Road,Cloudy,Evening,Minor,3,1.0,Poor road condition
+RA10202,2025-08-13,11:00,West Bengal,Kolkata,Intersection,Cloudy,Day,Minor,3,0.0,Drunk driving
+RA10203,2025-03-03,23:30,Maharashtra,Pune,Intersection,Clear,Evening,Serious,3,1.0,Driver distraction
+RA10204,2025-03-04,18:00,Tamil Nadu,Chennai,Urban Road,Rainy,Evening,Serious,2,1.0,Weather
+RA10205,2025-02-17,15:45,Maharashtra,Pune,Urban Road,Clear,Day,Minor,3,0.0,Poor road condition
+RA10206,2025-07-26,21:45,Delhi,New Delhi,Highway,Cloudy,Evening,Minor,2,1.0,Driver distraction
+RA10207,2025-01-03,12:45,Rajasthan,Jaipur,Residential Road,Clear,Day,Serious,1,3.0,Other
+RA10208,2025-07-28,17:45,West Bengal,Kolkata,Highway,Clear,Day,Minor,1,0.0,Over-speeding
+RA10209,2025-06-23,06:00,Delhi,New Delhi,Urban Road,Foggy,Day,Minor,1,0.0,Over-speeding
+RA10210,2025-06-20,23:00,Rajasthan,Jaipur,Urban Road,Clear,Evening,Minor,1,1.0,Poor road condition
+RA10211,2025-09-05,14:15,Delhi,New Delhi,Intersection,Rainy,Day,Serious,2,3.0,Other
+RA10212,2025-07-10,18:15,Rajasthan,Jaipur,Highway,Clear,Evening,Serious,2,1.0,Over-speeding
+RA10213,2025-09-23,11:45,Rajasthan,Jaipur,Intersection,Cloudy,Day,Minor,3,1.0,Over-speeding
+RA10214,2025-10-06,20:30,Maharashtra,Pune,Highway,Cloudy,Evening,Minor,2,0.0,Over-speeding
+RA10215,2025-12-02,01:30,Rajasthan,Jaipur,Intersection,Clear,Night,Minor,1,0.0,Other
+RA10216,2025-10-19,02:45,Delhi,New Delhi,Urban Road,Rainy,Night,Minor,3,0.0,Over-speeding
+RA10217,2025-07-08,12:30,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Minor,2,1.0,Driver distraction
+RA10218,2025-06-29,17:15,Uttar Pradesh,Ghaziabad,Intersection,Clear,Day,Minor,1,0.0,Other
+RA10219,2025-03-28,19:15,Maharashtra,Pune,Intersection,Rainy,Evening,Serious,2,1.0,Over-speeding
+RA10220,2025-08-07,10:30,West Bengal,Kolkata,Urban Road,Foggy,Day,Minor,2,0.0,Drunk driving
+RA10221,2025-02-20,15:00,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10222,2025-12-06,13:30,Maharashtra,Pune,Highway,Clear,Day,Minor,3,1.0,Weather
+RA10223,2025-11-05,23:30,Rajasthan,Jaipur,Highway,Rainy,Evening,Serious,3,2.0,Driver distraction
+RA10224,2025-02-13,15:30,Delhi,New Delhi,Urban Road,Clear,Day,Serious,2,1.0,Driver distraction
+RA10225,2025-10-14,10:30,Rajasthan,Jaipur,Intersection,,Day,Minor,1,1.0,Over-speeding
+RA10226,2025-02-12,23:45,Maharashtra,Mumbai,Urban Road,Clear,Evening,Serious,3,2.0,Poor road condition
+RA10227,2025-09-21,02:45,Gujarat,Ahmedabad,Residential Road,Clear,Night,Minor,2,0.0,Weather
+RA10228,2025-02-02,23:30,Karnataka,Bengaluru,Urban Road,Foggy,Evening,Minor,2,1.0,Over-speeding
+RA10229,2025-06-28,03:15,Karnataka,Bengaluru,Urban Road,Clear,Night,Fatal,2,4.0,Driver distraction
+RA10230,2025-08-29,06:00,Uttar Pradesh,Lucknow,Residential Road,Clear,Day,Minor,2,1.0,Other
+RA10231,2025-09-24,19:45,Maharashtra,Pune,Urban Road,Cloudy,Evening,Minor,2,1.0,Over-speeding
+RA10232,2025-06-02,17:45,Gujarat,Ahmedabad,Residential Road,Clear,Day,Serious,1,3.0,Over-speeding
+RA10233,2025-12-03,23:30,Uttar Pradesh,Ghaziabad,Urban Road,Rainy,Evening,Minor,2,0.0,Drunk driving
+RA10234,2025-10-10,17:45,Rajasthan,Jaipur,Intersection,Clear,Day,Serious,1,2.0,Driver distraction
+RA10235,2025-03-18,15:45,Maharashtra,Pune,Residential Road,Foggy,Day,Minor,2,0.0,Over-speeding
+RA10236,2025-09-02,08:45,Rajasthan,Jaipur,Intersection,Rainy,Day,Minor,1,0.0,Driver distraction
+RA10237,2025-09-24,00:30,Tamil Nadu,Chennai,Urban Road,Cloudy,Night,Minor,4,1.0,Over-speeding
+RA10238,2025-05-02,02:00,Maharashtra,Pune,Urban Road,Clear,Night,Minor,2,0.0,Drunk driving
+RA10239,2025-09-27,07:00,Maharashtra,Mumbai,Urban Road,Clear,Day,Minor,2,0.0,Poor road condition
+RA10240,2025-11-24,00:00,Tamil Nadu,Chennai,Highway,Rainy,Night,Minor,2,1.0,Drunk driving
+RA10241,2025-10-26,12:15,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Serious,3,2.0,Over-speeding
+RA10242,2025-10-06,18:30,Karnataka,Bengaluru,Urban Road,Clear,Evening,Minor,2,1.0,Other
+RA10243,2025-08-20,23:15,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Evening,Minor,3,0.0,Over-speeding
+RA10244,2025-04-09,11:00,Tamil Nadu,Chennai,Urban Road,Cloudy,Day,Minor,2,0.0,Weather
+RA10245,2025-10-18,21:00,Tamil Nadu,Chennai,Urban Road,Rainy,Evening,Minor,1,1.0,Driver distraction
+RA10246,2025-05-13,23:45,Uttar Pradesh,Ghaziabad,Urban Road,Rainy,Evening,Minor,2,0.0,Weather
+RA10247,2025-07-14,20:45,Rajasthan,Jaipur,Urban Road,Rainy,Evening,Serious,2,1.0,Over-speeding
+RA10248,2025-04-25,11:15,Maharashtra,Pune,Highway,Clear,Day,Minor,3,1.0,Over-speeding
+RA10249,2025-04-25,07:45,Rajasthan,Jaipur,Urban Road,Clear,Day,Serious,3,2.0,Driver distraction
+RA10250,2025-02-27,23:30,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Evening,Fatal,2,3.0,Over-speeding
+RA10251,2025-12-17,05:45,Uttar Pradesh,Lucknow,Highway,Rainy,Night,Minor,4,0.0,Over-speeding
+RA10252,2025-02-23,09:45,Maharashtra,Pune,Residential Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10253,2025-02-01,01:30,Uttar Pradesh,Lucknow,Urban Road,Cloudy,Night,Minor,2,1.0,Weather
+RA10254,2025-12-08,19:15,Maharashtra,Mumbai,Highway,,Evening,Serious,2,3.0,Over-speeding
+RA10255,2025-07-22,15:30,Tamil Nadu,Chennai,Intersection,Clear,Day,Minor,1,0.0,Other
+RA10256,2025-06-09,02:15,Uttar Pradesh,Lucknow,Highway,Clear,Night,Serious,3,3.0,Weather
+RA10257,2025-09-27,05:15,Tamil Nadu,Chennai,Intersection,Clear,Night,Serious,1,3.0,Other
+RA10258,2025-05-20,13:30,Uttar Pradesh,Lucknow,Residential Road,Cloudy,Day,Serious,2,2.0,Poor road condition
+RA10259,2025-02-16,12:30,Uttar Pradesh,Lucknow,Urban Road,Cloudy,Day,Minor,2,0.0,Poor road condition
+RA10260,2025-09-24,19:30,Karnataka,Bengaluru,Highway,Cloudy,Evening,Fatal,1,1.0,Drunk driving
+RA10261,2025-03-06,06:15,Rajasthan,Jaipur,Residential Road,Clear,Day,Minor,1,0.0,Poor road condition
+RA10262,2025-07-21,22:15,Uttar Pradesh,Lucknow,Intersection,Clear,Evening,Minor,2,0.0,Other
+RA10263,2025-12-13,10:00,Delhi,New Delhi,Highway,Clear,Day,Minor,1,1.0,Over-speeding
+RA10264,2025-12-08,19:30,West Bengal,Kolkata,Urban Road,Clear,Evening,Fatal,2,4.0,Driver distraction
+RA10265,2025-05-12,05:30,West Bengal,Kolkata,Highway,Clear,Night,Minor,2,1.0,Over-speeding
+RA10266,2025-10-12,00:45,Karnataka,Bengaluru,Urban Road,Clear,Night,Serious,2,2.0,Other
+RA10267,2025-08-12,01:30,Maharashtra,Pune,Residential Road,Cloudy,Night,Minor,2,1.0,Driver distraction
+RA10268,2025-06-24,08:15,Maharashtra,Mumbai,Highway,Clear,Day,Fatal,3,2.0,Poor road condition
+RA10269,2025-02-21,22:00,Tamil Nadu,Chennai,Residential Road,Clear,Evening,Minor,4,0.0,Other
+RA10270,2025-05-18,01:00,Karnataka,Bengaluru,Intersection,Foggy,Night,Minor,1,1.0,Other
+RA10271,2025-08-26,08:15,Delhi,New Delhi,Highway,Clear,Day,Fatal,4,2.0,Over-speeding
+RA10272,2025-12-27,02:15,Uttar Pradesh,Ghaziabad,Highway,Rainy,Night,Minor,2,0.0,Weather
+RA10273,2025-01-02,22:15,Uttar Pradesh,Lucknow,Residential Road,Rainy,Evening,Minor,2,1.0,Other
+RA10274,2025-09-19,16:15,West Bengal,Kolkata,Residential Road,Cloudy,Day,Serious,2,3.0,Over-speeding
+RA10275,2025-11-05,18:45,Maharashtra,Pune,Intersection,Rainy,Evening,Minor,2,0.0,Poor road condition
+RA10276,2025-12-14,17:00,Maharashtra,Pune,Urban Road,Clear,Day,Minor,3,0.0,Driver distraction
+RA10277,2025-06-04,15:15,Maharashtra,Pune,Highway,Rainy,Day,Minor,2,0.0,Poor road condition
+RA10278,2025-02-13,18:00,Rajasthan,Jaipur,Urban Road,Clear,Evening,Minor,2,1.0,Driver distraction
+RA10279,2025-04-09,00:15,Uttar Pradesh,Ghaziabad,Intersection,Clear,Night,Serious,2,2.0,Over-speeding
+RA10280,2025-11-07,20:30,Uttar Pradesh,Ghaziabad,Highway,Clear,Evening,Serious,1,2.0,Over-speeding
+RA10281,2025-11-17,17:00,Delhi,New Delhi,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10282,2025-08-21,17:15,Maharashtra,Pune,Urban Road,Rainy,Day,Minor,1,0.0,Over-speeding
+RA10283,2025-02-14,09:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10284,2025-02-14,19:45,Maharashtra,Pune,Residential Road,Clear,Evening,Serious,1,1.0,Driver distraction
+RA10285,2025-06-24,09:30,Maharashtra,Pune,Urban Road,Clear,Day,Fatal,2,1.0,Over-speeding
+RA10286,2025-08-03,01:00,West Bengal,Kolkata,Urban Road,Foggy,Night,Fatal,2,4.0,Poor road condition
+RA10287,2025-01-12,21:00,Uttar Pradesh,Lucknow,Intersection,Clear,Evening,Minor,2,1.0,Poor road condition
+RA10288,2025-09-08,05:00,Karnataka,Bengaluru,Residential Road,Rainy,Night,Minor,2,0.0,Drunk driving
+RA10289,2025-07-18,02:15,Karnataka,Bengaluru,Urban Road,Foggy,Night,Minor,1,0.0,Other
+RA10290,2025-01-05,14:45,Maharashtra,Pune,Urban Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10291,2025-02-04,05:30,Gujarat,Ahmedabad,Intersection,Rainy,Night,Minor,2,1.0,Weather
+RA10292,2025-06-15,20:45,Delhi,New Delhi,Residential Road,Clear,Evening,Serious,2,3.0,Over-speeding
+RA10293,2025-09-21,10:15,West Bengal,Kolkata,Highway,Clear,Day,Minor,2,0.0,Poor road condition
+RA10294,2025-10-29,00:15,Maharashtra,Mumbai,Urban Road,Rainy,Night,Minor,2,0.0,Other
+RA10295,2025-06-07,22:15,Karnataka,Bengaluru,Urban Road,Cloudy,Evening,Minor,2,0.0,Other
+RA10296,2025-04-18,12:00,Karnataka,Bengaluru,Urban Road,Clear,Day,Minor,4,0.0,Drunk driving
+RA10297,2025-12-20,06:45,Gujarat,Ahmedabad,Residential Road,Clear,Day,Minor,3,0.0,Poor road condition
+RA10298,2025-06-17,16:00,Maharashtra,Pune,Urban Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10299,2025-04-26,12:15,Delhi,New Delhi,Urban Road,Clear,Day,Serious,2,2.0,Poor road condition
+RA10300,2025-06-11,00:30,Uttar Pradesh,Ghaziabad,Residential Road,Rainy,Night,Minor,1,1.0,Weather
+RA10301,2025-01-05,18:00,Maharashtra,Mumbai,Intersection,Clear,Evening,Minor,3,1.0,Other
+RA10302,2025-04-21,09:15,Gujarat,Ahmedabad,Residential Road,Rainy,Day,Minor,2,0.0,Driver distraction
+RA10303,2025-07-08,16:15,Uttar Pradesh,Ghaziabad,Highway,Clear,Day,Serious,2,3.0,Over-speeding
+RA10304,2025-12-02,21:15,Gujarat,Ahmedabad,Highway,Rainy,Evening,Minor,4,0.0,Drunk driving
+RA10305,2025-09-27,14:00,Karnataka,Bengaluru,Highway,Rainy,Day,Serious,2,3.0,Over-speeding
+RA10306,2025-10-13,16:00,Uttar Pradesh,Lucknow,Urban Road,Rainy,Day,Fatal,1,2.0,Over-speeding
+RA10307,2025-07-18,06:00,Maharashtra,Mumbai,Highway,Clear,Day,Serious,1,2.0,Driver distraction
+RA10308,2025-02-10,05:15,Karnataka,Bengaluru,Highway,Clear,Night,Serious,1,1.0,Poor road condition
+RA10309,2025-05-23,09:00,Maharashtra,Mumbai,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10310,2025-12-30,20:45,Uttar Pradesh,Lucknow,Intersection,Clear,Evening,Fatal,1,2.0,Over-speeding
+RA10311,2025-01-17,12:00,Tamil Nadu,Chennai,Intersection,Clear,Day,Minor,3,1.0,Over-speeding
+RA10312,2025-11-17,08:30,Tamil Nadu,Chennai,Urban Road,Clear,Day,Fatal,3,1.0,Other
+RA10313,2025-09-07,18:30,Uttar Pradesh,Lucknow,Urban Road,Rainy,Evening,Minor,2,1.0,Poor road condition
+RA10314,2025-04-14,20:15,Delhi,New Delhi,Urban Road,Clear,Evening,Minor,2,0.0,Over-speeding
+RA10315,2025-10-11,21:45,Delhi,New Delhi,Urban Road,Foggy,Evening,Minor,2,1.0,Over-speeding
+RA10316,2025-11-02,07:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Serious,1,2.0,Drunk driving
+RA10317,2025-01-16,17:00,Rajasthan,Jaipur,Urban Road,Rainy,Day,Minor,3,1.0,Over-speeding
+RA10318,2025-02-08,14:15,Rajasthan,Jaipur,Residential Road,Clear,Day,Minor,1,1.0,Drunk driving
+RA10319,2025-08-31,10:00,West Bengal,Kolkata,Highway,Clear,Day,Serious,1,2.0,Driver distraction
+RA10320,2025-12-31,09:15,Rajasthan,Jaipur,Intersection,Clear,Day,Serious,2,1.0,Other
+RA10321,2025-01-09,02:15,Maharashtra,Mumbai,Urban Road,Cloudy,Night,Minor,1,0.0,Over-speeding
+RA10322,2025-08-31,06:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,2,0.0,Poor road condition
+RA10323,2025-02-19,13:15,Tamil Nadu,Chennai,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10324,2025-08-26,21:45,West Bengal,Kolkata,Urban Road,Clear,Evening,Serious,3,3.0,Other
+RA10325,2025-08-16,20:45,West Bengal,Kolkata,Urban Road,Rainy,Evening,Minor,2,0.0,Other
+RA10326,2025-02-03,04:45,Delhi,New Delhi,Intersection,Clear,Night,Serious,3,3.0,Poor road condition
+RA10327,2025-09-06,16:00,Delhi,New Delhi,Urban Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10328,2025-11-24,02:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Night,Minor,3,1.0,Over-speeding
+RA10329,2025-11-12,16:30,Uttar Pradesh,Lucknow,Highway,Cloudy,Day,Minor,2,0.0,Weather
+RA10330,2025-01-11,08:45,Karnataka,Bengaluru,Highway,Clear,Day,Minor,2,0.0,Poor road condition
+RA10331,2025-03-31,10:15,Karnataka,Bengaluru,Highway,Clear,Day,Serious,3,1.0,Over-speeding
+RA10332,2025-03-29,17:45,Maharashtra,Mumbai,Urban Road,Cloudy,Day,Minor,2,,Driver distraction
+RA10333,2025-06-15,10:30,Maharashtra,Mumbai,Residential Road,Clear,Day,Minor,1,0.0,Driver distraction
+RA10334,2025-02-22,19:00,Gujarat,Ahmedabad,Urban Road,Clear,Evening,Fatal,2,1.0,Weather
+RA10335,2025-11-08,12:15,Maharashtra,Pune,Highway,Clear,Day,Fatal,2,2.0,Poor road condition
+RA10336,2025-10-11,23:00,Gujarat,Ahmedabad,Residential Road,Clear,Evening,Serious,2,1.0,Poor road condition
+RA10337,2025-10-23,15:45,West Bengal,Kolkata,Intersection,Clear,Day,Minor,2,1.0,Poor road condition
+RA10338,2025-03-14,07:15,Maharashtra,Mumbai,Urban Road,Clear,Day,Serious,3,2.0,Over-speeding
+RA10339,2025-01-06,18:00,Delhi,New Delhi,Highway,Rainy,Evening,Serious,2,1.0,Driver distraction
+RA10340,2025-11-29,09:30,West Bengal,Kolkata,Urban Road,Rainy,Day,Minor,2,1.0,Over-speeding
+RA10341,2025-04-16,12:15,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,2,1.0,Weather
+RA10342,2025-08-28,03:00,Delhi,New Delhi,Urban Road,Clear,Night,Serious,3,2.0,Driver distraction
+RA10343,2025-11-28,02:45,Tamil Nadu,Chennai,Residential Road,Clear,Night,Minor,2,1.0,Driver distraction
+RA10344,2025-01-14,13:45,Karnataka,Bengaluru,Urban Road,Cloudy,Day,Minor,1,1.0,Over-speeding
+RA10345,2025-01-02,04:30,West Bengal,Kolkata,Residential Road,Clear,Night,Fatal,2,3.0,Over-speeding
+RA10346,2025-01-02,23:30,Delhi,New Delhi,Urban Road,Rainy,Evening,Serious,2,1.0,Drunk driving
+RA10347,2025-02-27,20:15,West Bengal,Kolkata,Intersection,Clear,Evening,Minor,3,0.0,Over-speeding
+RA10348,2025-01-19,16:30,West Bengal,Kolkata,Residential Road,Rainy,Day,Minor,2,0.0,Over-speeding
+RA10349,2025-10-27,17:30,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Minor,3,1.0,Weather
+RA10350,2025-08-10,14:00,Uttar Pradesh,Lucknow,Urban Road,Rainy,Day,Minor,2,1.0,Driver distraction
+RA10351,2025-12-24,01:00,Karnataka,Bengaluru,Urban Road,Clear,Night,Serious,1,3.0,Driver distraction
+RA10352,2025-10-20,09:15,Uttar Pradesh,Ghaziabad,Intersection,Cloudy,Day,Serious,1,3.0,Driver distraction
+RA10353,2025-12-18,11:15,Delhi,New Delhi,Urban Road,Clear,Day,Minor,1,0.0,Weather
+RA10354,2025-03-29,21:00,Maharashtra,Pune,Highway,Rainy,Evening,Minor,2,0.0,Driver distraction
+RA10355,2025-04-16,05:00,West Bengal,Kolkata,Highway,Foggy,Night,Serious,2,3.0,Poor road condition
+RA10356,2025-11-07,11:45,West Bengal,Kolkata,Residential Road,Cloudy,Day,Minor,2,1.0,Other
+RA10357,2025-03-31,08:15,Uttar Pradesh,Lucknow,Highway,Clear,Day,Minor,2,0.0,Poor road condition
+RA10358,2025-01-21,03:30,Gujarat,Ahmedabad,Highway,Clear,Night,Minor,2,0.0,Driver distraction
+RA10359,2025-09-02,02:30,Uttar Pradesh,Ghaziabad,Intersection,Clear,Night,Serious,2,3.0,Poor road condition
+RA10360,2025-10-20,08:30,Rajasthan,Jaipur,Urban Road,Clear,Day,Minor,2,0.0,Driver distraction
+RA10361,2025-12-20,01:30,Gujarat,Ahmedabad,Residential Road,Clear,Night,Serious,2,1.0,Driver distraction
+RA10362,2025-12-05,01:15,Gujarat,Ahmedabad,Urban Road,Cloudy,Night,Minor,2,1.0,Drunk driving
+RA10363,2025-02-13,08:45,Delhi,New Delhi,Highway,Cloudy,Day,Serious,2,1.0,Driver distraction
+RA10364,2025-10-09,04:15,Gujarat,Ahmedabad,Intersection,Clear,Night,Minor,2,0.0,Over-speeding
+RA10365,2025-11-05,13:45,Uttar Pradesh,Lucknow,Residential Road,Rainy,Day,Minor,2,1.0,Driver distraction
+RA10366,2025-09-12,00:15,Karnataka,Bengaluru,Residential Road,Foggy,Night,Minor,2,0.0,Over-speeding
+RA10367,2025-10-27,07:00,Maharashtra,Pune,Urban Road,Cloudy,Day,Minor,2,1.0,Driver distraction
+RA10368,2025-11-02,10:45,Maharashtra,Mumbai,Highway,Clear,Day,Minor,2,0.0,Drunk driving
+RA10369,2025-06-12,23:00,Uttar Pradesh,Ghaziabad,Urban Road,,Evening,Minor,1,0.0,Other
+RA10370,2025-01-15,15:45,Rajasthan,Jaipur,Highway,Foggy,Day,Minor,2,0.0,Over-speeding
+RA10371,2025-06-16,21:00,Maharashtra,Mumbai,Highway,Clear,Evening,Minor,3,1.0,Poor road condition
+RA10372,2025-03-15,08:00,Tamil Nadu,Chennai,Urban Road,Clear,Day,Fatal,1,1.0,Driver distraction
+RA10373,2025-02-11,10:30,Maharashtra,Pune,Urban Road,Cloudy,Day,Minor,3,1.0,Over-speeding
+RA10374,2025-02-15,10:45,Maharashtra,Mumbai,Urban Road,Cloudy,Day,Serious,2,2.0,Over-speeding
+RA10375,2025-09-12,21:15,Gujarat,Ahmedabad,Urban Road,Cloudy,Evening,Fatal,2,2.0,Over-speeding
+RA10376,2025-07-04,23:00,Uttar Pradesh,Ghaziabad,Urban Road,,Evening,Minor,2,1.0,Over-speeding
+RA10377,2025-07-17,23:00,Rajasthan,Jaipur,Intersection,,Evening,Serious,1,2.0,Over-speeding
+RA10378,2025-09-29,18:45,Rajasthan,Jaipur,Highway,Clear,Evening,Serious,3,2.0,Driver distraction
+RA10379,2025-07-20,12:30,Maharashtra,Mumbai,Urban Road,Clear,Day,Serious,2,2.0,Drunk driving
+RA10380,2025-08-18,12:00,Delhi,New Delhi,Residential Road,Clear,Day,Minor,4,0.0,Over-speeding
+RA10381,2025-02-01,23:15,Uttar Pradesh,Ghaziabad,Residential Road,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10382,2025-11-07,06:15,West Bengal,Kolkata,Urban Road,Rainy,Day,Minor,3,0.0,Over-speeding
+RA10383,2025-06-13,08:00,West Bengal,Kolkata,Urban Road,Clear,Day,Minor,3,0.0,Drunk driving
+RA10384,2025-02-26,21:45,Delhi,New Delhi,Urban Road,Rainy,Evening,Fatal,2,3.0,Driver distraction
+RA10385,2025-10-24,09:30,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Fatal,2,3.0,Drunk driving
+RA10386,2025-09-26,05:00,Uttar Pradesh,Lucknow,Residential Road,Clear,Night,Minor,2,0.0,Over-speeding
+RA10387,2025-01-20,13:30,Uttar Pradesh,Ghaziabad,Intersection,Clear,Day,Serious,2,3.0,Over-speeding
+RA10388,2025-03-12,07:15,Gujarat,Ahmedabad,Urban Road,Clear,Day,Minor,3,1.0,Other
+RA10389,2025-01-06,21:00,Gujarat,Ahmedabad,Residential Road,Foggy,Evening,Fatal,2,1.0,Over-speeding
+RA10390,2025-04-09,21:15,Uttar Pradesh,Lucknow,Urban Road,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10391,2025-02-06,07:00,Rajasthan,Jaipur,Highway,Clear,Day,Fatal,1,4.0,Over-speeding
+RA10392,2025-09-17,12:00,Uttar Pradesh,Lucknow,Residential Road,Rainy,Day,Serious,2,2.0,Other
+RA10393,2025-07-10,23:45,Maharashtra,Mumbai,Urban Road,Clear,Evening,Minor,4,0.0,Drunk driving
+RA10394,2025-12-24,17:30,Karnataka,Bengaluru,Urban Road,Clear,Day,Minor,1,0.0,Drunk driving
+RA10395,2025-10-01,05:00,Rajasthan,Jaipur,Highway,Clear,Night,Serious,3,2.0,Other
+RA10396,2025-08-12,14:45,Gujarat,Ahmedabad,Intersection,Clear,Day,Minor,3,0.0,Over-speeding
+RA10397,2025-07-05,14:30,Uttar Pradesh,Ghaziabad,Urban Road,Rainy,Day,Minor,1,0.0,Other
+RA10398,2025-01-20,15:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Day,Fatal,1,1.0,Over-speeding
+RA10399,2025-01-26,00:30,Delhi,New Delhi,Urban Road,Clear,Night,Minor,2,0.0,Poor road condition
+RA10400,2025-08-13,07:15,Maharashtra,Mumbai,Highway,Clear,Day,Minor,2,0.0,Driver distraction
+RA10401,2025-01-02,20:30,West Bengal,Kolkata,Highway,Clear,Evening,Minor,1,1.0,
+RA10402,2025-01-16,05:30,Rajasthan,Jaipur,Residential Road,Clear,Night,Minor,3,1.0,Other
+RA10403,2025-03-21,07:30,Maharashtra,Mumbai,Residential Road,Foggy,Day,Fatal,2,1.0,Over-speeding
+RA10404,2025-11-19,07:00,West Bengal,Kolkata,Intersection,Clear,Day,Minor,3,0.0,Other
+RA10405,2025-06-17,04:15,Maharashtra,Pune,Residential Road,Clear,Night,Minor,3,0.0,Driver distraction
+RA10406,2025-09-16,03:00,Karnataka,Bengaluru,Urban Road,Clear,Night,Minor,3,1.0,Poor road condition
+RA10407,2025-05-31,08:15,Maharashtra,Pune,Highway,Clear,Day,Fatal,2,4.0,Other
+RA10408,2025-03-05,20:00,Uttar Pradesh,Lucknow,Urban Road,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10409,2025-05-16,00:00,West Bengal,Kolkata,Urban Road,Foggy,Night,Serious,2,2.0,Other
+RA10410,2025-02-03,06:45,Uttar Pradesh,Ghaziabad,Intersection,Cloudy,Day,Serious,1,1.0,Drunk driving
+RA10411,2025-10-09,01:00,Uttar Pradesh,Lucknow,Residential Road,Clear,Night,Serious,2,1.0,Poor road condition
+RA10412,2025-03-08,13:45,Delhi,New Delhi,Intersection,Clear,Day,Fatal,1,1.0,Over-speeding
+RA10413,2025-05-18,06:00,Delhi,New Delhi,Highway,Cloudy,Day,Serious,2,2.0,Drunk driving
+RA10414,2025-12-24,19:45,Uttar Pradesh,Lucknow,Highway,Clear,Evening,Fatal,1,2.0,Poor road condition
+RA10415,2025-08-05,14:15,Uttar Pradesh,Ghaziabad,Highway,Clear,Day,Minor,2,0.0,Driver distraction
+RA10416,2025-06-17,18:30,Tamil Nadu,Chennai,Urban Road,Clear,Evening,Serious,2,3.0,Over-speeding
+RA10417,2025-07-18,15:15,West Bengal,Kolkata,Urban Road,Rainy,Day,Minor,2,1.0,Over-speeding
+RA10418,2025-10-14,10:15,Uttar Pradesh,Lucknow,Highway,Rainy,Day,Minor,3,0.0,Other
+RA10419,2025-04-03,20:15,Delhi,New Delhi,Urban Road,Clear,Evening,Serious,1,3.0,Over-speeding
+RA10420,2025-08-21,11:30,Karnataka,Bengaluru,Intersection,Cloudy,Day,Fatal,3,3.0,Poor road condition
+RA10421,2025-11-15,22:15,West Bengal,Kolkata,Urban Road,Clear,Evening,Serious,3,3.0,Other
+RA10422,2025-07-28,23:30,Tamil Nadu,Chennai,Urban Road,Clear,Evening,Minor,2,1.0,Over-speeding
+RA10423,2025-06-12,14:45,Rajasthan,Jaipur,Residential Road,,Day,Minor,2,0.0,Over-speeding
+RA10424,2025-02-22,16:15,Karnataka,Bengaluru,Urban Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10425,2025-04-01,06:15,Maharashtra,Pune,Intersection,Clear,Day,Minor,2,1.0,Over-speeding
+RA10426,2025-12-12,19:00,Uttar Pradesh,Lucknow,Residential Road,Clear,Evening,Minor,2,1.0,Drunk driving
+RA10427,2025-07-17,16:15,Gujarat,Ahmedabad,Urban Road,Clear,Day,Minor,1,1.0,Poor road condition
+RA10428,2025-04-20,21:00,Gujarat,Ahmedabad,Residential Road,Rainy,Evening,Minor,3,1.0,Drunk driving
+RA10429,2025-06-02,06:00,Uttar Pradesh,Ghaziabad,Highway,Clear,Day,Serious,3,3.0,Driver distraction
+RA10430,2025-07-30,18:45,Rajasthan,Jaipur,Residential Road,Clear,Evening,Minor,3,1.0,Poor road condition
+RA10431,2025-07-16,11:00,Uttar Pradesh,Ghaziabad,Residential Road,Rainy,Day,Fatal,2,4.0,Drunk driving
+RA10432,2025-09-13,04:15,Rajasthan,Jaipur,Residential Road,Clear,Night,Serious,2,3.0,Over-speeding
+RA10433,2025-04-04,04:45,Gujarat,Ahmedabad,Highway,Rainy,Night,Minor,4,0.0,Drunk driving
+RA10434,2025-08-25,13:45,Uttar Pradesh,Lucknow,Urban Road,Foggy,Day,Minor,2,1.0,Other
+RA10435,2025-06-11,07:00,Maharashtra,Pune,Residential Road,Rainy,Day,Minor,1,0.0,Poor road condition
+RA10436,2025-12-10,02:00,Uttar Pradesh,Lucknow,Intersection,Clear,Night,Fatal,2,4.0,Driver distraction
+RA10437,2025-02-27,10:15,Karnataka,Bengaluru,Highway,Clear,Day,Minor,2,1.0,Driver distraction
+RA10438,2025-02-24,15:30,West Bengal,Kolkata,Residential Road,Clear,Day,Minor,2,1.0,Over-speeding
+RA10439,2025-06-18,07:45,Uttar Pradesh,Ghaziabad,Highway,Clear,Day,Fatal,1,3.0,Over-speeding
+RA10440,2025-07-05,22:00,Maharashtra,Mumbai,Residential Road,Clear,Evening,Fatal,2,2.0,Over-speeding
+RA10441,2025-09-10,18:00,West Bengal,Kolkata,Intersection,Clear,Evening,Minor,2,0.0,Other
+RA10442,2025-05-28,12:15,Maharashtra,Mumbai,Urban Road,Clear,Day,Minor,2,1.0,Over-speeding
+RA10443,2025-11-30,22:45,Uttar Pradesh,Lucknow,Urban Road,Clear,Evening,Minor,1,1.0,Weather
+RA10444,2025-06-23,10:00,Maharashtra,Pune,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10445,2025-02-17,03:15,Karnataka,Bengaluru,Highway,Foggy,Night,Minor,3,1.0,Over-speeding
+RA10446,2025-02-13,00:00,Tamil Nadu,Chennai,Highway,Cloudy,Night,Minor,2,1.0,Driver distraction
+RA10447,2025-12-22,22:00,Maharashtra,Mumbai,Urban Road,Clear,Evening,Fatal,2,1.0,Driver distraction
+RA10448,2025-02-18,23:45,West Bengal,Kolkata,Highway,Cloudy,Evening,Minor,3,0.0,Weather
+RA10449,2025-12-12,17:00,Karnataka,Bengaluru,Highway,Clear,Day,Serious,2,3.0,Other
+RA10450,2025-04-12,02:15,Delhi,New Delhi,Highway,Cloudy,Night,Minor,3,1.0,Other
+RA10451,2025-02-04,07:45,West Bengal,Kolkata,Residential Road,Cloudy,Day,Serious,2,3.0,Over-speeding
+RA10452,2025-04-22,00:30,West Bengal,Kolkata,Residential Road,Clear,Night,Serious,2,3.0,Weather
+RA10453,2025-08-13,01:00,Maharashtra,Pune,Highway,Rainy,Night,Serious,1,3.0,Over-speeding
+RA10454,2025-06-06,05:15,Uttar Pradesh,Ghaziabad,Residential Road,Cloudy,Night,Fatal,1,4.0,Other
+RA10455,2025-10-14,13:45,Karnataka,Bengaluru,Highway,Cloudy,Day,Minor,4,1.0,Driver distraction
+RA10456,2025-08-12,01:15,Karnataka,Bengaluru,Highway,Cloudy,Night,Minor,3,0.0,Driver distraction
+RA10457,2025-05-27,23:30,Uttar Pradesh,Lucknow,Highway,Clear,Evening,Minor,3,1.0,Over-speeding
+RA10458,2025-08-20,10:30,Tamil Nadu,Chennai,Urban Road,Clear,Day,Minor,3,1.0,Over-speeding
+RA10459,2025-12-21,06:30,Gujarat,Ahmedabad,Urban Road,Foggy,Day,Fatal,1,1.0,Over-speeding
+RA10460,2025-05-31,12:00,Uttar Pradesh,Lucknow,Highway,Clear,Day,Minor,3,1.0,Other
+RA10461,2025-02-26,18:45,Rajasthan,Jaipur,Intersection,Clear,Evening,Serious,2,2.0,Weather
+RA10462,2025-05-30,07:45,Uttar Pradesh,Lucknow,Residential Road,Clear,Day,Minor,3,1.0,Other
+RA10463,2025-11-03,01:00,Rajasthan,Jaipur,,Clear,Night,Minor,1,0.0,Over-speeding
+RA10464,2025-03-21,01:45,Maharashtra,Pune,Highway,Clear,Night,Minor,2,1.0,Drunk driving
+RA10465,2025-12-13,20:45,Uttar Pradesh,Ghaziabad,Urban Road,Rainy,Evening,Serious,3,2.0,Over-speeding
+RA10466,2025-08-03,02:30,West Bengal,Kolkata,Residential Road,Clear,Night,Serious,3,2.0,Drunk driving
+RA10467,2025-08-08,15:15,Uttar Pradesh,Lucknow,Residential Road,Rainy,Day,Minor,2,1.0,Driver distraction
+RA10468,2025-04-26,09:15,Karnataka,Bengaluru,Highway,Foggy,Day,Minor,2,1.0,Over-speeding
+RA10469,2025-12-02,18:45,Uttar Pradesh,Lucknow,Highway,Clear,Evening,Serious,2,3.0,Drunk driving
+RA10470,2025-01-14,01:00,West Bengal,Kolkata,Urban Road,Clear,Night,Minor,4,0.0,Over-speeding
+RA10471,2025-04-20,21:45,Rajasthan,Jaipur,Highway,Clear,Evening,Fatal,2,3.0,Driver distraction
+RA10472,2025-06-02,16:45,Gujarat,Ahmedabad,Intersection,Cloudy,Day,Minor,2,1.0,Poor road condition
+RA10473,2025-06-24,10:30,Maharashtra,Pune,Residential Road,Rainy,Day,Minor,2,0.0,Over-speeding
+RA10474,2025-06-23,04:15,Maharashtra,Pune,Highway,Clear,Night,Minor,2,0.0,Other
+RA10475,2025-02-23,23:30,Tamil Nadu,Chennai,Urban Road,Clear,Evening,Minor,2,0.0,Driver distraction
+RA10476,2025-03-24,07:00,Rajasthan,Jaipur,Urban Road,Clear,Day,Minor,2,1.0,Weather
+RA10477,2025-02-04,11:45,Gujarat,Ahmedabad,Urban Road,Clear,Day,Minor,3,1.0,Poor road condition
+RA10478,2025-07-28,09:15,Uttar Pradesh,Ghaziabad,Urban Road,Cloudy,Day,Fatal,3,4.0,Poor road condition
+RA10479,2025-05-09,05:00,Tamil Nadu,Chennai,Urban Road,Rainy,Night,Minor,3,1.0,Poor road condition
+RA10480,2025-07-26,09:45,Uttar Pradesh,Lucknow,Intersection,Clear,Day,Minor,2,0.0,Other
+RA10481,2025-08-04,03:30,Delhi,New Delhi,Highway,Foggy,Night,Minor,2,1.0,Drunk driving
+RA10482,2025-09-14,00:30,Gujarat,Ahmedabad,Urban Road,Clear,Night,Minor,2,0.0,Over-speeding
+RA10483,2025-07-19,06:00,Delhi,New Delhi,Urban Road,Foggy,Day,Serious,3,2.0,Over-speeding
+RA10484,2025-08-25,02:45,Rajasthan,Jaipur,Urban Road,Clear,Night,Minor,2,0.0,Drunk driving
+RA10485,2025-08-03,09:30,Maharashtra,Pune,Residential Road,Clear,Day,Serious,2,1.0,Over-speeding
+RA10486,2025-08-27,20:45,Delhi,New Delhi,Urban Road,Cloudy,Evening,Minor,3,1.0,Over-speeding
+RA10487,2025-08-14,03:45,Maharashtra,Mumbai,Residential Road,Clear,Night,Fatal,2,4.0,Over-speeding
+RA10488,2025-04-26,00:00,Karnataka,Bengaluru,Residential Road,Rainy,Night,Minor,3,1.0,Drunk driving
+RA10489,2025-03-31,02:00,Rajasthan,Jaipur,Urban Road,Cloudy,Night,Serious,2,1.0,Over-speeding
+RA10490,2025-10-15,12:45,Tamil Nadu,Chennai,Highway,Clear,Day,Minor,2,0.0,Drunk driving
+RA10491,2025-05-06,06:30,West Bengal,Kolkata,Intersection,Clear,Day,Minor,2,0.0,Weather
+RA10492,2025-07-20,11:15,Gujarat,Ahmedabad,Highway,Rainy,Day,Serious,1,3.0,Weather
+RA10493,2025-03-13,00:15,Rajasthan,Jaipur,Urban Road,Clear,Night,Serious,3,1.0,Driver distraction
+RA10494,2025-06-07,07:30,Tamil Nadu,Chennai,Intersection,Clear,Day,Serious,2,1.0,Drunk driving
+RA10495,2025-07-13,09:45,Delhi,New Delhi,Intersection,Clear,Day,Minor,1,1.0,Drunk driving
+RA10496,2025-08-17,10:00,Maharashtra,Pune,Highway,Rainy,Day,Serious,3,3.0,Driver distraction
+RA10497,2025-07-12,13:30,Uttar Pradesh,Lucknow,Highway,Clear,Day,Serious,2,3.0,Poor road condition
+RA10498,2025-05-12,18:45,Maharashtra,Mumbai,Urban Road,Clear,Evening,Serious,3,1.0,Over-speeding
+RA10499,2025-12-18,11:15,West Bengal,Kolkata,Residential Road,Foggy,Day,Minor,2,1.0,Other
+RA10500,2025-07-07,20:15,Maharashtra,Pune,Highway,Clear,Evening,Serious,3,1.0,Over-speeding
+RA10309,2025-05-23,09:00,Maharashtra,Mumbai,Highway,Clear,Day,Minor,2,1.0,Over-speeding
+RA10014,2025-10-26,07:15,Rajasthan,Jaipur,Highway,Rainy,Day,Fatal,2,2.0,Over-speeding
+RA10415,2025-08-05,14:15,Uttar Pradesh,Ghaziabad,Highway,Clear,Day,Minor,2,0.0,Driver distraction
+RA10033,2025-02-26,17:45,Uttar Pradesh,Ghaziabad,Urban Road,Clear,Day,Minor,2,1.0,Poor road condition
+RA10461,2025-02-26,18:45,Rajasthan,Jaipur,Intersection,Clear,Evening,Serious,2,2.0,Weather
