@@ -20,9 +20,6 @@ from analysis import (
     casualties_correlation
 )
 
-# --------------------------------------------------
-# PAGE CONFIGURATION & ANIMATED DESIGN
-# --------------------------------------------------
 
 st.set_page_config(
     page_title="Road Accident Analytics",
@@ -31,7 +28,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Sleek Animations, Glassmorphism, and Sidebar Redesign
+
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -130,7 +127,7 @@ cleaned = preprocess_data(df)
 # --------------------------------------------------
 st.sidebar.title("Navigation 🧭")
 
-# Notice how the CSS we added above will completely transform these radio buttons!
+
 page = st.sidebar.radio(
     "Select Analysis Module:",
     [
@@ -141,7 +138,7 @@ page = st.sidebar.radio(
     ]
 )
 
-# Mini animation pop-up when navigating
+
 st.toast(f"Launched {page.replace('📊', '').replace('⚙️', '').replace('🗺️', '').replace('📈', '').strip()} Engine", icon="🚀")
 
 
