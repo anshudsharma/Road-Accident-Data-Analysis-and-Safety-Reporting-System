@@ -1,4 +1,3 @@
-
 import os
 import shutil
 import subprocess
@@ -225,7 +224,10 @@ st.caption(
 
 try:
     df = load_data()
-    cleaned = preprocess_data(df)
+
+    # Initialize memory so Streamlit doesn't reset the cleaned data
+    if "cleaned" not in st.session_state:
+        st.session_state["cleaned"] = None
 
 except Exception as e:
     st.error(f"Unable to load project data: {e}")
@@ -235,7 +237,6 @@ except Exception as e:
 # ============================================================
 # 7. SIDEBAR NAVIGATION
 # ============================================================
-
 
 page = st.sidebar.radio(
     "Select Analysis Module:",
@@ -254,6 +255,11 @@ page = st.sidebar.radio(
 # ============================================================
 
 if page == "📊 Dashboard":
+
+    cleaned = st.session_state["cleaned"]
+    if cleaned is None:
+        st.warning(" Please go to  Data Preprocessing and clean the dataset first!")
+        st.stop()
 
     st.header("Accident Overview")
 
@@ -305,28 +311,34 @@ elif page == "⚙️ Data Preprocessing":
     st.subheader("Original Dataset")
     st.dataframe(df, use_container_width=True)
 
-    st.subheader("Cleaned Dataset")
-    st.dataframe(cleaned, use_container_width=True)
+    if st.button("🧹 Clean Dataset", type="primary", use_container_width=True):
+        with st.spinner("Scrubbing the data... Please wait."):
+            st.session_state["cleaned"] = preprocess_data(df)
+        st.success("Data preprocessing completed!")
 
-    st.subheader("Missing Values Before Cleaning")
-    st.dataframe(df.isnull().sum())
+    if st.session_state["cleaned"] is not None:
+        cleaned = st.session_state["cleaned"]
 
-    st.subheader("Dataset Information")
+        st.subheader("Cleaned Dataset")
+        st.dataframe(cleaned, use_container_width=True)
 
-    c1, c2, c3 = st.columns(3)
+        st.subheader("Missing Values Before Cleaning")
+        st.dataframe(df.isnull().sum())
 
-    c1.metric("Original Records", len(df))
-    c2.metric("Cleaned Records", len(cleaned))
-    c3.metric("Columns", len(cleaned.columns))
+        st.subheader("Dataset Information")
 
-    st.success("Data preprocessing completed!")
+        c1, c2, c3 = st.columns(3)
 
-    st.download_button(
-        label="📥 Download Cleaned CSV",
-        data=cleaned.to_csv(index=False),
-        file_name="cleaned_accidents.csv",
-        mime="text/csv"
-    )
+        c1.metric("Original Records", len(df))
+        c2.metric("Cleaned Records", len(cleaned))
+        c3.metric("Columns", len(cleaned.columns))
+
+        st.download_button(
+            label="📥 Download Cleaned CSV",
+            data=cleaned.to_csv(index=False),
+            file_name="cleaned_accidents.csv",
+            mime="text/csv"
+        )
 
 
 # ============================================================
@@ -334,6 +346,11 @@ elif page == "⚙️ Data Preprocessing":
 # ============================================================
 
 elif page == "🗺️ Accident Analysis":
+
+    cleaned = st.session_state["cleaned"]
+    if cleaned is None:
+        st.warning("⚠️ Please go to **⚙️ Data Preprocessing** and clean the dataset first!")
+        st.stop()
 
     st.header("Exploratory Data Analysis")
 
@@ -367,6 +384,11 @@ elif page == "🗺️ Accident Analysis":
 # ============================================================
 
 elif page == "📈 Statistical Analysis":
+
+    cleaned = st.session_state["cleaned"]
+    if cleaned is None:
+        st.warning("⚠️ Please go to **⚙️ Data Preprocessing** and clean the dataset first!")
+        st.stop()
 
     st.header("Python Statistical Analysis")
 
