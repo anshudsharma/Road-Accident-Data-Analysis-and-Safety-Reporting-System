@@ -2,6 +2,7 @@
 import pandas as pd
 from scipy.stats import chi2_contingency, pearsonr
 
+
 def get_summary(df):
     return {
         "Total Accidents": len(df),
@@ -29,10 +30,9 @@ def monthly_analysis(df):
 
 def weekday_analysis(df):
     weekday_order = [
-        "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday", "Sunday"
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday"
     ]
-
     counts = df["date"].dt.day_name().value_counts()
     return counts.reindex(weekday_order, fill_value=0)
 
@@ -50,11 +50,13 @@ def time_analysis(df):
         df["time"], format="%H:%M", errors="coerce"
     ).dt.hour
 
-    return pd.cut(
+    categories = pd.cut(
         hours,
         bins=[-1, 5, 11, 17, 23],
         labels=["Night", "Morning", "Afternoon", "Evening"]
-    ).value_counts().reindex(
+    )
+
+    return categories.value_counts().reindex(
         ["Morning", "Afternoon", "Evening", "Night"],
         fill_value=0
     )
@@ -65,20 +67,34 @@ def severity_weather_test(df):
 
     chi2, p_value, dof, expected = chi2_contingency(table)
 
+    expected_df = pd.DataFrame(
+        expected,
+        index=table.index,
+        columns=table.columns
+    )
+
     return {
         "chi_square": round(chi2, 3),
         "p_value": round(p_value, 4),
-        "degrees_of_freedom": dof
+        "degrees_of_freedom": dof,
+        "expected_frequencies": expected_df,
+        "minimum_expected": round(expected.min(), 3),
+        "cells_below_5": int((expected < 5).sum())
     }
 
 
 def casualties_correlation(df):
+    data = df[
+        ["vehicles_involved", "casualties"]
+    ].dropna()
+
     correlation, p_value = pearsonr(
-        df["vehicles_involved"],
-        df["casualties"]
+        data["vehicles_involved"],
+        data["casualties"]
     )
 
     return {
         "correlation": round(correlation, 3),
-        "p_value": round(p_value, 4)
+        "p_value": round(p_value, 4),
+        "sample_size": len(data)
     }
