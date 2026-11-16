@@ -19,9 +19,6 @@ from analysis import (
 )
 
 
-# --------------------------------------------------
-# PAGE CONFIGURATION
-# --------------------------------------------------
 
 st.set_page_config(
     page_title="Road Accident Analytics",
