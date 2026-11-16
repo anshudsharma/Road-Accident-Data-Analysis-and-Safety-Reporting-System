@@ -1,7 +1,8 @@
 
 import pandas as pd
 from scipy.stats import chi2_contingency, pearsonr
-
+from scipy.stats import mannwhitneyu
+from mlxtend.frequent_patterns import apriori, association_rules
 
 def get_summary(df):
     return {
@@ -98,3 +99,34 @@ def casualties_correlation(df):
         "p_value": round(p_value, 4),
         "sample_size": len(data)
     }
+
+def mann_whitney_test(df, group_col, target_col, group1, group2):
+    """Performs Mann-Whitney U test between two groups."""
+    data1 = df[df[group_col] == group1][target_col].dropna()
+    data2 = df[df[group_col] == group2][target_col].dropna()
+
+    stat, p_value = mannwhitneyu(data1, data2, alternative='two-sided')
+    return {"statistic": stat, "p_value": p_value, "g1_size": len(data1), "g2_size": len(data2)}
+
+def apriori_association(df, columns_to_analyze, min_support=0.05):
+    """Generates association rules using Apriori."""
+    # One-hot encode the selected categorical columns
+    df_encoded = pd.get_dummies(df[columns_to_analyze])
+
+    # Convert to boolean for mlxtend
+    df_encoded = df_encoded.astype(bool)
+
+    # Generate frequent itemsets
+    frequent_itemsets = apriori(df_encoded, min_support=min_support, use_colnames=True)
+
+    if frequent_itemsets.empty:
+        return None
+
+    # Generate rules
+    rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1.0)
+
+    # Clean up output for display
+    rules["antecedents"] = rules["antecedents"].apply(lambda x: ', '.join(list(x)))
+    rules["consequents"] = rules["consequents"].apply(lambda x: ', '.join(list(x)))
+
+    return rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values(by='lift', ascending=False)
