@@ -1,37 +1,45 @@
-# Road Accident Data Analysis and Safety Reporting System
+# 🚦 Road Accident Data Analysis and Safety Reporting System
 
 ## 1. Project Overview
 
-The **Road Accident Data Analysis and Safety Reporting System** is a data analytics project developed using Python, R, Streamlit, and MySQL.
+The **Road Accident Data Analysis and Safety Reporting System** is a data analytics project developed using Python, R Programming, and Streamlit.
 
-The main objective is to analyze historical road accident data, identify accident patterns, understand factors contributing to accidents, and generate meaningful statistical reports to support road safety awareness and decision-making.
+The main objective of this project is to analyze historical road accident data, identify accident patterns, understand factors contributing to accidents, and generate meaningful statistical reports to support road safety awareness and decision-making.
+
+This project uses CSV files for data storage instead of a database, making it simple, lightweight, and easy to execute.
 
 ## 2. Technologies Used
 
-| Technology          | Purpose                 |
-| ------------------- | ----------------------- |
-| Python              | Data processing         |
-| R Programming       | Statistical analysis    |
-| Streamlit           | Interactive dashboard   |
-| MySQL               | Database management     |
-| Pandas              | Data manipulation       |
-| NumPy               | Numerical operations    |
-| Matplotlib, Seaborn | Data visualization      |
-| ggplot2             | R visualization         |
-| dplyr               | Data manipulation in R  |
-| arules              | Association rule mining |
-| lubridate           | Date and time analysis  |
+| Technology    | Purpose                   |
+| ------------- | ------------------------- |
+| Python        | Data processing           |
+| R Programming | Statistical analysis      |
+| Streamlit     | Interactive dashboard     |
+| Pandas        | Data manipulation         |
+| NumPy         | Numerical operations      |
+| Matplotlib    | Data visualization        |
+| Seaborn       | Statistical visualization |
+| ggplot2       | R visualization           |
+| dplyr         | Data manipulation in R    |
+| arules        | Association rule mining   |
+| lubridate     | Date and time analysis    |
+| CSV           | Data storage              |
 
 ## 3. Main Features
 
-- Accident data management using MySQL.
+- CSV-based accident data management.
 - Data cleaning and preprocessing using Python.
 - Interactive Streamlit dashboard.
 - Statistical analysis using R.
 - Apriori association rule mining.
 - Bayesian probability analysis.
 - Monthly accident trend analysis.
-- Data visualization and report generation.
+- Accident severity visualization.
+- Weather condition analysis.
+- Road type analysis.
+- Casualty distribution analysis.
+- Statistical report generation.
+- Data visualization and insights.
 
 ## 4. Statistical Analysis
 
@@ -46,42 +54,48 @@ The project implements the following statistical techniques:
 7. Fisher's Exact Test
 8. Spearman Correlation
 
+These statistical methods help identify differences, relationships, and patterns in road accident data.
+
 ## 5. Project Architecture
 
 ```text
        ROAD ACCIDENT DATA
-                |
-                v
-         MYSQL DATABASE
-                |
-                v
+               |
+               v
+          CSV DATASET
+               |
+               v
        PYTHON APPLICATION
-                |
-                v
-        DATA PROCESSING
-                |
-                v
+               |
+               v
+      DATA CLEANING AND
+        PREPROCESSING
+               |
+               v
          CLEANED DATA
-                |
-                v
+               |
+               v
         R ANALYSIS MODULE
-                |
-       +--------+--------+
-       |        |        |
-       v        v        v
-   Statistical Apriori Bayesian
-     Testing   Analysis Analysis
-       |        |        |
-       +--------+--------+
-                |
-                v
-        TIME SERIES ANALYSIS
-                |
-                v
+               |
+       +-------+-------+
+       |       |       |
+       v       v       v
+  Statistical Apriori Bayesian
+    Testing   Analysis Analysis
+       |       |       |
+       +-------+-------+
+               |
+               v
+       TIME SERIES ANALYSIS
+               |
+               v
           GGPLOT2 CHARTS
-                |
-                v
-        STREAMLIT DASHBOARD
+               |
+               v
+       STREAMLIT DASHBOARD
+               |
+               v
+       REPORT GENERATION
 ```
 
 ## 6. Project Folder Structure
@@ -115,13 +129,15 @@ git clone https://github.com/your-username/Road-Accident-Data-Analysis-and-Safet
 cd Road-Accident-Data-Analysis-and-Safety-Reporting-System
 ```
 
+Replace `your-username` with your actual GitHub username.
+
 ### Step 2: Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment.
+### Step 3: Activate the Virtual Environment
 
 **Windows:**
 
@@ -135,19 +151,29 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### Step 3: Install Python Dependencies
+### Step 4: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Install R
+Alternatively, install the packages directly:
 
-Download and install R:
+```bash
+pip install streamlit pandas numpy matplotlib seaborn scipy
+```
+
+### Step 5: Install R Programming
+
+Download and install R from the official website:
 
 https://cran.r-project.org/
 
-### Step 5: Install Required R Packages
+You can also install RStudio for a better development experience:
+
+https://posit.co/download/rstudio-desktop/
+
+### Step 6: Install Required R Packages
 
 Open R or RStudio and execute:
 
@@ -160,23 +186,31 @@ install.packages(c(
 ))
 ```
 
-### Step 6: Configure MySQL
+### Step 7: Configure the Dataset
 
-Create the project database:
+Place the road accident CSV dataset inside the `data/` directory.
 
-```sql
-CREATE DATABASE road_accident_db;
+Expected dataset path:
+
+```text
+data/road_accident_sample_500.csv
 ```
 
-Configure your MySQL connection credentials in the Python application.
+The application reads the accident records directly from the CSV file using Pandas.
 
-### Step 7: Run the Application
+### Step 8: Run the Application
+
+Execute the following command in the terminal:
 
 ```bash
 streamlit run app.py
 ```
 
+The Streamlit application will open in your default web browser.
+
 ## 8. Project Outputs
+
+The project generates the following outputs:
 
 - Statistical test results.
 - Apriori association rules.
@@ -187,6 +221,7 @@ streamlit run app.py
 - Weather condition visualization.
 - Road type visualization.
 - Casualty distribution histogram.
+- Statistical analysis reports.
 
 ## 9. Applications
 
@@ -194,7 +229,9 @@ streamlit run app.py
 - Understanding relationships between weather and accident severity.
 - Analyzing accident patterns across different road types.
 - Studying monthly accident trends.
+- Understanding accident severity distribution.
 - Supporting road safety research and planning.
+- Providing data-driven insights for road safety awareness.
 
 ## 10. Future Enhancements
 
@@ -204,9 +241,13 @@ streamlit run app.py
 - Accident hotspot detection.
 - Advanced historical trend analysis.
 - User authentication.
+- Machine learning-based accident severity prediction.
+- Accident risk prediction.
 
 ## 11. Important Notes
 
+- This project uses CSV files for data storage.
+- No MySQL or other database server is required.
 - Statistical conclusions depend on dataset quality and size.
 - Statistical associations do not establish causation.
 - Statistical tests should be interpreted after checking their assumptions.
@@ -214,10 +255,14 @@ streamlit run app.py
 - Meaningful time-series analysis requires sufficient historical observations.
 - This project is intended for educational and analytical purposes.
 
----
+## 12. Author
 
 **Project Name:** Road Accident Data Analysis and Safety Reporting System
 
-**Technologies:** Python, R, Streamlit, MySQL
+**Technologies:** Python, R, Streamlit, Pandas, NumPy, CSV
 
 **Domain:** Data Analytics and Road Safety
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star on GitHub.
