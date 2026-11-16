@@ -1,3 +1,4 @@
+import subprocess
 import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
@@ -261,6 +262,32 @@ elif page == "📈 Statistical Analysis":
         st.dataframe(result["expected_frequencies"], use_container_width=True)
 
     st.markdown("---")
+    st.subheader("3. Advanced Market Basket Analysis (Powered by R)")
+
+    if st.button("🚀 Run R Statistical Engine"):
+        with st.spinner("Crunching Apriori rules and Mann-Whitney tests in R... ⏳"):
+            try:
+                # The exact command that worked in your terminal
+                r_exe = r"C:\Program Files\R\R-4.6.2\bin\Rscript.exe"
+                r_script = r"R\statistical_analysis.R"
+
+                # Execute R script in the background
+                result = subprocess.run(
+                    [r_exe, r_script],
+                    capture_output=True,
+                    text=True,
+                    check=True
+                )
+
+                # Display the raw R output beautifully inside a code block
+                st.success("R Script Executed Successfully!")
+                st.code(result.stdout, language="markdown")
+
+            except subprocess.CalledProcessError as e:
+                st.error("The R script encountered an error, sir:")
+                st.code(e.stderr, language="bash")
+            except FileNotFoundError:
+                st.error("Could not locate the R executable. Check the path, sir!")
 
     # PEARSON CORRELATION
     st.subheader("2. Vehicles Involved vs Casualties")
