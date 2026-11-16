@@ -1,13 +1,44 @@
 
 options(warn = -1)
 
+# ============================================================
+# 1. INSTALL REQUIRED R PACKAGES
+# ============================================================
+
+required_packages <- c(
+  "arules",
+  "dplyr",
+  "ggplot2",
+  "lubridate"
+)
+
+for (pkg in required_packages) {
+
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+
+    install.packages(
+      pkg,
+      repos = "https://cloud.r-project.org"
+    )
+
+  }
+
+}
+
+# ============================================================
+# 2. LOAD REQUIRED R PACKAGES
+# ============================================================
+
 suppressPackageStartupMessages({
+
   library(arules)
   library(dplyr)
   library(ggplot2)
   library(lubridate)
+
 })
 
+cat("All required R packages loaded successfully!\n")
 
 cat("\n🚗 Loading accident data...\n")
 
