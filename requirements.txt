@@ -8,3 +8,4 @@ mysql-connector-python
 SQLAlchemy
 scipy
 Pillow
+python-dotenv
