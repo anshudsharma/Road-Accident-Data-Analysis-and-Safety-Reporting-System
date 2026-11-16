@@ -1,3 +1,4 @@
+
 import os
 import shutil
 import subprocess
@@ -7,7 +8,6 @@ import streamlit as st
 import pandas as pd
 
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, URL
 
 from preprocessing import preprocess_data
 
@@ -31,6 +31,8 @@ from analysis import (
 # ============================================================
 
 PROJECT_DIR = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_DIR / "data"
+
 R_SCRIPT = PROJECT_DIR / "R" / "statistical_analysis.R"
 REPORT_DIR = PROJECT_DIR / "reports"
 PLOT_DIR = REPORT_DIR / "plots"
@@ -96,46 +98,74 @@ div[data-testid="metric-container"]:hover {
 
 
 # ============================================================
-# 3. MYSQL CONNECTION
+# 3. LOAD DATA WITHOUT MYSQL
 # ============================================================
 
-@st.cache_data(ttl=600, show_spinner="Connecting to MySQL...")
-def load_data():
+POSSIBLE_DATA_FILES = [
+    DATA_DIR / "road_accident_data.csv",
+    DATA_DIR / "accident_records.csv",
+    DATA_DIR / "data.csv",
+    PROJECT_DIR / "road_accident_data.csv",
+    PROJECT_DIR / "accident_records.csv",
+    PROJECT_DIR / "data.csv",
+    DATA_DIR / "road_accident_data.xlsx",
+    PROJECT_DIR / "road_accident_data.xlsx"
+]
 
-    required = [
-        "MYSQL_USER",
-        "MYSQL_PASSWORD",
-        "MYSQL_HOST",
-        "MYSQL_DATABASE"
-    ]
 
-    missing = [
-        key for key in required if not os.getenv(key)
-    ]
+def read_dataset(file_path):
 
-    if missing:
+    extension = Path(file_path).suffix.lower()
+
+    if extension == ".csv":
+        data = pd.read_csv(file_path)
+
+    elif extension == ".xlsx":
+        data = pd.read_excel(file_path, engine="openpyxl")
+
+    else:
         raise ValueError(
-            "Missing database settings: " + ", ".join(missing)
+            "Unsupported file format. Use CSV or XLSX."
         )
 
-    db_url = URL.create(
-        drivername="mysql+mysqlconnector",
-        username=os.getenv("MYSQL_USER"),
-        password=os.getenv("MYSQL_PASSWORD"),
-        host=os.getenv("MYSQL_HOST", "localhost"),
-        port=int(os.getenv("MYSQL_PORT", "3306")),
-        database=os.getenv("MYSQL_DATABASE")
-    )
+    if data.empty:
+        raise ValueError("The dataset is empty.")
 
-    engine = create_engine(db_url)
+    return data
 
-    try:
-        return pd.read_sql(
-            "SELECT * FROM accident_records",
-            con=engine
+
+def find_local_dataset():
+
+    for file_path in POSSIBLE_DATA_FILES:
+
+        if file_path.is_file():
+            return read_dataset(file_path)
+
+    return None
+
+
+def load_uploaded_dataset(uploaded_file):
+
+    extension = Path(uploaded_file.name).suffix.lower()
+
+    if extension == ".csv":
+        data = pd.read_csv(uploaded_file)
+
+    elif extension == ".xlsx":
+        data = pd.read_excel(
+            uploaded_file,
+            engine="openpyxl"
         )
-    finally:
-        engine.dispose()
+
+    else:
+        raise ValueError(
+            "Please upload a CSV or XLSX file."
+        )
+
+    if data.empty:
+        raise ValueError("The uploaded dataset is empty.")
+
+    return data
 
 
 # ============================================================
@@ -147,6 +177,7 @@ def get_r_executable():
     configured_path = os.getenv("R_EXECUTABLE")
 
     if configured_path:
+
         if Path(configured_path).is_file():
             return configured_path
 
@@ -154,13 +185,11 @@ def get_r_executable():
             "R_EXECUTABLE path in .env does not exist."
         )
 
-    # Search Rscript from system PATH
     r_path = shutil.which("Rscript")
 
     if r_path:
         return r_path
 
-    # Common Windows installation locations
     if os.name == "nt":
 
         candidates = sorted(
@@ -213,7 +242,7 @@ def run_r_analysis():
 
 
 # ============================================================
-# 6. LOAD DATA
+# 6. LOAD PROJECT DATA
 # ============================================================
 
 st.title("🚗 Road Accident Data Analysis")
@@ -223,13 +252,43 @@ st.caption(
 )
 
 try:
-    df = load_data()
 
-    # Initialize memory so Streamlit doesn't reset the cleaned data
+    # Try loading an existing local dataset first
+    df = find_local_dataset()
+
+    # If no local dataset exists, allow upload
+    if df is None:
+
+        st.info(
+            "No local dataset found. Upload your road accident dataset below."
+        )
+
+        uploaded_file = st.file_uploader(
+            "Upload Road Accident Dataset",
+            type=["csv", "xlsx"],
+            help="Upload your accident dataset in CSV or Excel format."
+        )
+
+        if uploaded_file is None:
+
+            st.warning(
+                "Please upload your dataset to start the application."
+            )
+
+            st.stop()
+
+        df = load_uploaded_dataset(uploaded_file)
+
     if "cleaned" not in st.session_state:
         st.session_state["cleaned"] = None
 
+    st.success(
+        f"Dataset loaded successfully! "
+        f"Total records: {len(df)}"
+    )
+
 except Exception as e:
+
     st.error(f"Unable to load project data: {e}")
     st.stop()
 
@@ -257,8 +316,11 @@ page = st.sidebar.radio(
 if page == "📊 Dashboard":
 
     cleaned = st.session_state["cleaned"]
+
     if cleaned is None:
-        st.warning(" Please go to  Data Preprocessing and clean the dataset first!")
+        st.warning(
+            "Please go to Data Preprocessing and clean the dataset first!"
+        )
         st.stop()
 
     st.header("Accident Overview")
@@ -309,29 +371,69 @@ elif page == "⚙️ Data Preprocessing":
     st.header("Data Preprocessing")
 
     st.subheader("Original Dataset")
-    st.dataframe(df, use_container_width=True)
 
-    if st.button("🧹 Clean Dataset", type="primary", use_container_width=True):
-        with st.spinner("Scrubbing the data... Please wait."):
-            st.session_state["cleaned"] = preprocess_data(df)
-        st.success("Data preprocessing completed!")
+    st.dataframe(
+        df,
+        use_container_width=True
+    )
+
+    if st.button(
+        "🧹 Clean Dataset",
+        type="primary",
+        use_container_width=True
+    ):
+
+        try:
+
+            with st.spinner(
+                "Scrubbing the data... Please wait."
+            ):
+
+                st.session_state["cleaned"] = preprocess_data(df)
+
+            st.success(
+                "Data preprocessing completed!"
+            )
+
+        except Exception as e:
+
+            st.error(
+                f"Data preprocessing failed: {e}"
+            )
 
     if st.session_state["cleaned"] is not None:
+
         cleaned = st.session_state["cleaned"]
 
         st.subheader("Cleaned Dataset")
-        st.dataframe(cleaned, use_container_width=True)
+
+        st.dataframe(
+            cleaned,
+            use_container_width=True
+        )
 
         st.subheader("Missing Values Before Cleaning")
+
         st.dataframe(df.isnull().sum())
 
         st.subheader("Dataset Information")
 
         c1, c2, c3 = st.columns(3)
 
-        c1.metric("Original Records", len(df))
-        c2.metric("Cleaned Records", len(cleaned))
-        c3.metric("Columns", len(cleaned.columns))
+        c1.metric(
+            "Original Records",
+            len(df)
+        )
+
+        c2.metric(
+            "Cleaned Records",
+            len(cleaned)
+        )
+
+        c3.metric(
+            "Columns",
+            len(cleaned.columns)
+        )
 
         st.download_button(
             label="📥 Download Cleaned CSV",
@@ -348,8 +450,11 @@ elif page == "⚙️ Data Preprocessing":
 elif page == "🗺️ Accident Analysis":
 
     cleaned = st.session_state["cleaned"]
+
     if cleaned is None:
-        st.warning("⚠️ Please go to **⚙️ Data Preprocessing** and clean the dataset first!")
+        st.warning(
+            "Please go to Data Preprocessing and clean the dataset first!"
+        )
         st.stop()
 
     st.header("Exploratory Data Analysis")
@@ -386,8 +491,11 @@ elif page == "🗺️ Accident Analysis":
 elif page == "📈 Statistical Analysis":
 
     cleaned = st.session_state["cleaned"]
+
     if cleaned is None:
-        st.warning("⚠️ Please go to **⚙️ Data Preprocessing** and clean the dataset first!")
+        st.warning(
+            "Please go to Data Preprocessing and clean the dataset first!"
+        )
         st.stop()
 
     st.header("Python Statistical Analysis")
@@ -439,13 +547,17 @@ elif page == "📈 Statistical Analysis":
             )
 
         with st.expander("View Expected Frequencies"):
+
             st.dataframe(
                 result["expected_frequencies"],
                 use_container_width=True
             )
 
     except Exception as e:
-        st.error(f"Chi-square test error: {e}")
+
+        st.error(
+            f"Chi-square test error: {e}"
+        )
 
     st.markdown("---")
 
@@ -475,9 +587,13 @@ elif page == "📈 Statistical Analysis":
         )
 
         if corr["p_value"] < 0.05:
-            st.success("Correlation is statistically significant.")
+            st.success(
+                "Correlation is statistically significant."
+            )
         else:
-            st.info("Correlation is not statistically significant.")
+            st.info(
+                "Correlation is not statistically significant."
+            )
 
         if abs(corr["correlation"]) < 0.10:
             st.info("Negligible linear relationship.")
@@ -492,7 +608,10 @@ elif page == "📈 Statistical Analysis":
             st.info("Relatively strong linear relationship.")
 
     except Exception as e:
-        st.error(f"Correlation error: {e}")
+
+        st.error(
+            f"Correlation error: {e}"
+        )
 
 
 # ============================================================
@@ -511,8 +630,6 @@ elif page == "🧪 R Statistical Analysis":
 
     st.markdown("---")
 
-    # R MODULE INFORMATION
-
     col1, col2, col3, col4 = st.columns(4)
 
     col1.metric("Language", "R")
@@ -524,7 +641,10 @@ elif page == "🧪 R Statistical Analysis":
 
     st.subheader("Analysis Modules")
 
-    with st.expander("1. Statistical Testing", expanded=True):
+    with st.expander(
+        "1. Statistical Testing",
+        expanded=True
+    ):
 
         st.write("""
         - Mann-Whitney U Test
@@ -577,8 +697,6 @@ elif page == "🧪 R Statistical Analysis":
 
     st.markdown("---")
 
-    # EXECUTION BUTTON
-
     if st.button(
         "🚀 Run Complete R Statistical Analysis",
         type="primary",
@@ -604,6 +722,7 @@ elif page == "🧪 R Statistical Analysis":
         except subprocess.TimeoutExpired:
 
             st.session_state["r_success"] = False
+
             st.error(
                 "R analysis exceeded the 5-minute execution limit."
             )
@@ -611,29 +730,48 @@ elif page == "🧪 R Statistical Analysis":
         except Exception as e:
 
             st.session_state["r_success"] = False
-            st.error(f"R execution failed: {e}")
+
+            st.error(
+                f"R execution failed: {e}"
+            )
 
     # DISPLAY R OUTPUT
 
     if st.session_state.get("r_success", False):
 
         st.markdown("---")
+
         st.subheader("R Statistical Results")
 
-        stdout = st.session_state.get("r_stdout", "")
+        stdout = st.session_state.get(
+            "r_stdout", ""
+        )
 
-        st.code(stdout, language="text")
+        st.code(
+            stdout,
+            language="text"
+        )
 
-        stderr = st.session_state.get("r_stderr", "")
+        stderr = st.session_state.get(
+            "r_stderr", ""
+        )
 
         if stderr.strip():
+
             with st.expander("R Warnings and Messages"):
-                st.code(stderr, language="text")
+
+                st.code(
+                    stderr,
+                    language="text"
+                )
 
         # DISPLAY GENERATED PLOTS
 
         st.markdown("---")
-        st.subheader("R Data Visualizations (ggplot2)")
+
+        st.subheader(
+            "R Data Visualizations (ggplot2)"
+        )
 
         plot_files = {
             "Accident Severity": "severity.png",
@@ -650,11 +788,17 @@ elif page == "🧪 R Statistical Analysis":
             plot_path = PLOT_DIR / filename
 
             if plot_path.is_file():
-                available_plots.append((title, plot_path))
+                available_plots.append(
+                    (title, plot_path)
+                )
 
         if available_plots:
 
-            for i in range(0, len(available_plots), 2):
+            for i in range(
+                0,
+                len(available_plots),
+                2
+            ):
 
                 columns = st.columns(2)
 
@@ -663,7 +807,9 @@ elif page == "🧪 R Statistical Analysis":
                 ):
 
                     with columns[j]:
+
                         st.write(f"**{title}**")
+
                         st.image(
                             str(path),
                             use_container_width=True
@@ -679,6 +825,7 @@ elif page == "🧪 R Statistical Analysis":
         # DOWNLOAD REPORT FILES
 
         st.markdown("---")
+
         st.subheader("Download R Analysis Reports")
 
         for filename in [
@@ -704,5 +851,5 @@ elif page == "🧪 R Statistical Analysis":
     st.markdown("---")
 
     st.caption(
-        "Python + R + MySQL + Streamlit"
+        "Python + R + Pandas + Streamlit"
     )
